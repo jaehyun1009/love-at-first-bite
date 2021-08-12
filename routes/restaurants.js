@@ -12,3 +12,5 @@ const router = Router();
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
+router.get('/search/:location/:category', checkAuth, restaurantCtrl.search)
+router.get('/search/:location/', checkAuth, restaurantCtrl.searchWithoutCategory)

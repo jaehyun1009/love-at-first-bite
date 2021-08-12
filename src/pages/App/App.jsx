@@ -8,6 +8,7 @@ import * as authService from '../../services/authService'
 import * as profileAPI from '../../services/profileService'
 import ProfileList from '../ProfileList/ProfileList'
 import ProfileDetails from '../ProfileDetails/ProfileDetails'
+import RestaurantSearch from '../RestaurantSearch/RestaurantSearch'
 
 class App extends Component {
 	state = {
@@ -51,7 +52,7 @@ class App extends Component {
         </Route>
 				<Route 
 					exact path="/users"
-					render={()=> 
+					render={() => 
 						authService.getUser() ?
 						<ProfileList userProfile={userProfile}/> :
 						<Redirect to='/login'/>
@@ -65,6 +66,24 @@ class App extends Component {
 							userProfile={userProfile}
 							/> :
 						<Redirect to='/login'/>
+				}/>
+				<Route
+					exact path="/search/:location/:category"
+					render={({match}) =>
+						authService.getUser() ?
+						<RestaurantSearch
+							match={match}
+							userProfile={userProfile}
+						/> : <Redirect to='/login'/>
+				}/>
+				<Route
+					exact path="/search/:location"
+					render={({match}) =>
+						authService.getUser() ?
+						<RestaurantSearch
+							match={match}
+							userProfile={userProfile}
+						/> : <Redirect to='/login'/>
 				}/>
 			</>
 		)
