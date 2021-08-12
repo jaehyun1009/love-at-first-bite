@@ -58,14 +58,13 @@ class App extends Component {
 				}/>
 				<Route
 					exact path="/profile"
-					render={({location}) => {
+					render={({location}) =>
 						authService.getUser() ?
 						<ProfileDetails
 							location={location}
 							userProfile={userProfile}
 							/> :
 						<Redirect to='/login'/>
-					}
 				}/>
 			</>
 		)
