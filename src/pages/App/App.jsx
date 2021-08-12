@@ -7,6 +7,7 @@ import Landing from '../Landing/Landing'
 import * as authService from '../../services/authService'
 import * as profileAPI from '../../services/profileService'
 import ProfileList from '../ProfileList/ProfileList'
+import ProfileDetails from '../ProfileDetails/ProfileDetails'
 
 class App extends Component {
 	state = {
@@ -55,7 +56,16 @@ class App extends Component {
 						<ProfileList userProfile={userProfile}/> :
 						<Redirect to='/login'/>
 				}/>
-
+				<Route
+					exact path="/profile"
+					render={({location}) =>
+						authService.getUser() ?
+						<ProfileDetails
+							location={location}
+							userProfile={userProfile}
+							/> :
+						<Redirect to='/login'/>
+				}/>
 			</>
 		)
 	}
