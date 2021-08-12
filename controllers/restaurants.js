@@ -14,10 +14,10 @@ function search(req, res){
     },
     params: {
       location: req.params.location,
-      category: req.params.category
+      categories: req.params.category
     }
-  }).then(res => {
-    console.log(res.data.businesses)
+  }).then(response => {
+    res.json(response.data)
   }).catch(err => {
     console.log(err)
   })
@@ -31,8 +31,8 @@ function searchWithoutCategory(req, res){
     params: {
       location: req.params.location
     }
-  }).then(res => {
-    console.log(res.data.businesses)
+  }).then(response => {
+    res.json(response.data)
   }).catch(err => {
     console.log(err)
   })

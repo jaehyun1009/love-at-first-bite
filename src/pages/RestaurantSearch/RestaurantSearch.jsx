@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import * as restaurantAPI from '../../services/restaurantService'
 
 class RestaurantSearch extends Component {
@@ -30,11 +31,13 @@ class RestaurantSearch extends Component {
     return (
       <>
         <h1>Restaurant Results</h1>
-        <h2>Location: {this.props.match.params.location}</h2>
-        {
-          this.props.match.params.category &&
-          <h2>Category: {this.props.match.params.category}</h2>
-        }
+        {this.state.searchResults?.map(restaurant => 
+          <RestaurantCard
+            restaurant={restaurant}
+            key={restaurant.id}
+            userProfile={this.props.userProfile}
+          />
+        )}
       </>
     )
   }
