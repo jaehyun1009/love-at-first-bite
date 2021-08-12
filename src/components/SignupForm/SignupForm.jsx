@@ -135,7 +135,7 @@ class SignupForm extends Component {
             name="gender"
             onClick={this.handleClick}
           />
-          <label htmlFor="Male">Male</label>
+          <label htmlFor="Male">Male</label>&nbsp;
           <input
             type="radio"
             id="Female"
@@ -143,7 +143,7 @@ class SignupForm extends Component {
             name="gender"
             onClick={this.handleClick}
           />
-          <label htmlFor="Female">Female</label>
+          <label htmlFor="Female">Female</label>&nbsp;
           <input
             type="radio"
             id="Other"
