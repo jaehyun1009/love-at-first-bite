@@ -6,13 +6,11 @@ export {
 
 const profileSchema = new mongoose.Schema(
   {
+    firstName: String,
+    lastName: String,
     email: String,
-    name: String,
     profilePic: String,
-    birthday: {
-      type: Date,
-      default: new Date(2000, 0, 1)
-    },
+    birthday: Date,
     minimumAge: {
       type: Number,
       min: 18,

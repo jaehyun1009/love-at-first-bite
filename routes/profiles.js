@@ -13,3 +13,4 @@ const router = Router();
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get('/userProfile', checkAuth, profilesCtrl.userProfile)
+router.get('/', checkAuth, profilesCtrl.index)

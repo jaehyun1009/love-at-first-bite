@@ -2,7 +2,14 @@ import { Profile } from '../models/profile.js'
 import { Restaurant } from '../models/restaurant.js'
 
 export {
-  userProfile
+  index,
+  userProfile,
+}
+
+function index(req, res){
+  Profile.find({}).populate('restaurants').then(profiles => {
+    res.json(profiles)
+  })
 }
 
 function userProfile(req, res){
