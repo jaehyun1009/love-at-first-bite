@@ -4,25 +4,19 @@ export {
   Restaurant
 }
 
-const Schema = mongoose.Schema
-
-const locationSchema = new Schema({
-  city: String,
-  country: String,
-  state: String,
-  address: String,
-  zipCode: Number
-})
-
-const restaurantSchema = new Schema({
+const restaurantSchema = new mongoose.Schema({
     id: String,
     name: String,
     url: String,
-    imgUrl: String,
-    phone: String,
+    img_url: String,
     rating: Number,
-    priceRating: Number,
-    location: locationSchema,
+    price: String,
+    phone: String,
+    address: String,
+    city: String,
+    zip_code: String,
+    state: String,
+    country: String,
     likedBy: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Restaurant'

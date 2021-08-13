@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SearchForm from '../SearchForm/SearchForm'
+import ProfileCard from '../ProfileCard/ProfileCard'
 
 const NavBar = ({ userProfile, handleLogout, history }) => {
 	return (
@@ -9,7 +10,7 @@ const NavBar = ({ userProfile, handleLogout, history }) => {
 				<nav>
 					<div>
 						<ul>
-							<li>Welcome, {userProfile.firstName}</li>
+							<li>Welcome, <ProfileCard key={userProfile._id} profile={userProfile}/></li>
 							<li>
                 <Link to="/users">Users</Link>
               </li>

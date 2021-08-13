@@ -18,7 +18,6 @@ class ProfileList extends Component {
           <ProfileCard
             key={profile._id}
             profile={profile}
-            userProfile={this.props.userProfile}
           />
         )}
       </>
