@@ -36,6 +36,8 @@ class RestaurantSearch extends Component {
             restaurant={restaurant}
             key={restaurant.id}
             userProfile={this.props.userProfile}
+            handleAddRestaurant={this.props.handleAddRestaurant}
+            handleRemoveRestaurant={this.props.handleRemoveRestaurant}
           />
         )}
       </>

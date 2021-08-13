@@ -10,6 +10,7 @@ import ProfileList from '../ProfileList/ProfileList'
 import ProfileDetails from '../ProfileDetails/ProfileDetails'
 import RestaurantSearch from '../RestaurantSearch/RestaurantSearch'
 import RestaurantDetails from '../RestaurantDetails/RestaurantDetails'
+import * as restaurantAPI from '../../services/restaurantService'
 
 class App extends Component {
 	state = {
@@ -27,6 +28,16 @@ class App extends Component {
 			user: await authService.getUser(),
 			userProfile: await profileAPI.getUserProfile()
 		})
+	}
+
+	handleAddRestaurant = async restaurant => {
+		const updatedProfile = await restaurantAPI.addRestaurant(restaurant)
+		this.setState({userProfile: updatedProfile})
+	}
+
+	handleRemoveRestaurant = async restaurant => {
+		const updatedProfile = await restaurantAPI.removeRestaurant(restaurant)
+		this.setState({userProfile: updatedProfile})
 	}
 
 	async componentDidMount(){
@@ -83,6 +94,8 @@ class App extends Component {
 						<RestaurantSearch
 							match={match}
 							userProfile={userProfile}
+							handleAddRestaurant={this.handleAddRestaurant}
+							handleRemoveRestaurant={this.handleRemoveRestaurant}
 						/> : <Redirect to='/login'/>
 				}/>
 				<Route

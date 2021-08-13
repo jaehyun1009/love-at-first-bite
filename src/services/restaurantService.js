@@ -30,3 +30,26 @@ export function searchOne(id){
       mode: 'cors'
     }).then(res => res.json())
 }
+
+export function addRestaurant(restaurant){
+  return fetch(
+    `${BASE_URL}addRestaurant`,
+    {
+        method: 'POST',
+        headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+        body: JSON.stringify(restaurant)
+    },{
+      mode: 'cors'
+    }).then(res => res.json())
+}
+
+export function removeRestaurant(id){
+  return fetch(
+    `${BASE_URL}removeRestaurant/${id}`,
+    {
+      method: 'DELETE',
+      headers: {'Authorization': 'Bearer ' + tokenService.getToken()}
+    },{
+      mode: 'cors'
+    }).then(res => res.json())
+}
