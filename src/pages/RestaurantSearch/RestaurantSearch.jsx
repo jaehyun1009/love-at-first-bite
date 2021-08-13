@@ -30,7 +30,7 @@ class RestaurantSearch extends Component {
   render(){
     return (
       <>
-        <h1>Restaurant Results</h1>
+        <h1>Results</h1>
         {this.state.searchResults?.map(restaurant => 
           <RestaurantCard
             restaurant={restaurant}

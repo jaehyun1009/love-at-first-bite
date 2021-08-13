@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SearchForm from '../SearchForm/SearchForm'
 
-const NavBar = ({ user, handleLogout, history }) => {
+const NavBar = ({ userProfile, handleLogout, history }) => {
 	return (
 		<>
-			{user ? (
+			{userProfile ? (
 				<nav>
 					<div>
 						<ul>
-							<li>Welcome, {user.name}</li>
+							<li>Welcome, {userProfile.firstName}</li>
 							<li>
                 <Link to="/users">Users</Link>
               </li>
