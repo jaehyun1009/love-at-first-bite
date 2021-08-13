@@ -20,3 +20,13 @@ export function searchWithoutCategory(location){
       mode: 'cors'
     }).then(res => res.json())
 }
+
+export function searchOne(id){
+  return fetch(
+    `${BASE_URL}searchOne/${id}`,
+    {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+    },{
+      mode: 'cors'
+    }).then(res => res.json())
+}
