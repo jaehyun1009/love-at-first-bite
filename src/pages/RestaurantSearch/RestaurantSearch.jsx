@@ -8,9 +8,9 @@ class RestaurantSearch extends Component {
   }
   async componentDidMount(){
     const {params} = this.props.match
-    const searchResults = await (params.category ?
-      restaurantAPI.search(params.location, params.category) :
-      restaurantAPI.searchWithoutCategory(params.location))
+    const searchResults = await (params.name ?
+      restaurantAPI.search(params.location, params.name) :
+      restaurantAPI.searchWithoutName(params.location))
     this.setState({
       searchResults: searchResults.businesses
     })
@@ -18,10 +18,10 @@ class RestaurantSearch extends Component {
   async componentDidUpdate(prevProps){
     const {params} = this.props.match
     if (params.location !== prevProps.match.params.location ||
-        params.category !== prevProps.match.params.category){
-      const searchResults = await (params.category ?
-        restaurantAPI.search(params.location, params.category) :
-        restaurantAPI.searchWithoutCategory(params.location))
+        params.name !== prevProps.match.params.name){
+      const searchResults = await (params.name ?
+        restaurantAPI.search(params.location, params.name) :
+        restaurantAPI.searchWithoutName(params.location))
       this.setState({
         searchResults: searchResults.businesses
       })
