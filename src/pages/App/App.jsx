@@ -9,6 +9,7 @@ import * as profileAPI from '../../services/profileService'
 import ProfileList from '../ProfileList/ProfileList'
 import ProfileDetails from '../ProfileDetails/ProfileDetails'
 import RestaurantSearch from '../RestaurantSearch/RestaurantSearch'
+import RestaurantDetails from '../RestaurantDetails/RestaurantDetails'
 
 class App extends Component {
 	state = {
@@ -81,6 +82,15 @@ class App extends Component {
 					render={({match}) =>
 						authService.getUser() ?
 						<RestaurantSearch
+							match={match}
+							userProfile={userProfile}
+						/> : <Redirect to='/login'/>
+				}/>
+				<Route
+					exact path="/restaurants/:id"
+					render={({match}) =>
+						authService.getUser() ?
+						<RestaurantDetails
 							match={match}
 							userProfile={userProfile}
 						/> : <Redirect to='/login'/>

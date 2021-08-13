@@ -4,7 +4,8 @@ import { Restaurant } from '../models/restaurant.js'
 
 export {
   search,
-  searchWithoutCategory
+  searchWithoutCategory,
+  searchOne
 }
 
 function search(req, res){
@@ -31,6 +32,18 @@ function searchWithoutCategory(req, res){
     params: {
       location: req.params.location
     }
+  }).then(response => {
+    res.json(response.data)
+  }).catch(err => {
+    console.log(err)
+  })
+}
+
+function searchOne(req, res){
+  axios.get(`https://api.yelp.com/v3/businesses/${req.params.id}`, {
+    headers: {
+      Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+    },
   }).then(response => {
     res.json(response.data)
   }).catch(err => {

@@ -14,3 +14,4 @@ const router = Router();
 router.use(decodeUserFromToken)
 router.get('/search/:location/:category', checkAuth, restaurantCtrl.search)
 router.get('/search/:location/', checkAuth, restaurantCtrl.searchWithoutCategory)
+router.get('/searchOne/:id', checkAuth, restaurantCtrl.searchOne)
