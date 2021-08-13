@@ -7,7 +7,7 @@ class Search extends Component {
     locData: {
       query: ''
     },
-    catData: {
+    nameData: {
       query: ''
     }
   }
@@ -22,17 +22,17 @@ class Search extends Component {
     })
   }
 
-  handleCatChange = e => {
-    const catData = {...this.state.catData, [e.target.name]: e.target.value}
+  handleNameChange = e => {
+    const nameData = {...this.state.nameData, [e.target.name]: e.target.value}
     this.setState({
-      catData,
+      nameData,
       invalidForm: !this.formRef.current.checkValidity()
     })
   }
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.history.push(`/search/${this.state.locData.query}/${this.state.catData.query}`)
+    this.props.history.push(`/search/${this.state.locData.query}/${this.state.nameData.query}`)
   }
 
   render(){
@@ -56,13 +56,13 @@ class Search extends Component {
         </div>
         <div>
           <label htmlFor="query">
-            Category
+            Name/Category
           </label>
           <input
             type="text"
             name="query"
-            value={this.state.catData.query}
-            onChange={this.handleCatChange}
+            value={this.state.nameData.query}
+            onChange={this.handleNameChange}
           />
         </div>
         <button

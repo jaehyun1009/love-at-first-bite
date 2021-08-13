@@ -69,7 +69,7 @@ class App extends Component {
 						<Redirect to='/login'/>
 				}/>
 				<Route
-					exact path="/search/:location/:category"
+					exact path="/search/:location/:name"
 					render={({match}) =>
 						authService.getUser() ?
 						<RestaurantSearch

@@ -1,9 +1,9 @@
 import * as tokenService from "./tokenService"
 const BASE_URL = "/api/restaurants/"
 
-export function search(location, category){
+export function search(location, name){
   return fetch(
-    `${BASE_URL}search/${location}/${category}`,
+    `${BASE_URL}search/${location}/${name}`,
     {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     },{
@@ -11,7 +11,7 @@ export function search(location, category){
     }).then(res => res.json())
 }
 
-export function searchWithoutCategory(location){
+export function searchWithoutName(location){
   return fetch(
     `${BASE_URL}search/${location}`,
     {

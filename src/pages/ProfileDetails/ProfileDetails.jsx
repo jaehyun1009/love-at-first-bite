@@ -6,9 +6,7 @@ const ProfileDetails = ({location, userProfile}) => {
   return (
     <>
       <h1><DisplayName profile={profile}/></h1>
-
       <h2>Favorite Restaurants</h2>
-
       <h2>Messages</h2>
     </>
   )
