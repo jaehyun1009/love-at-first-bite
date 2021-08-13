@@ -42,9 +42,21 @@ class Search extends Component {
         ref={this.formRef}
         onSubmit={this.handleSubmit}
         >
+        
         <div>
           <label htmlFor="query">
-            Location<span style={{color: 'red'}}>*</span>
+            Restaurant Name: 
+          </label>
+          <input
+            type="text"
+            name="query"
+            value={this.state.nameData.query}
+            onChange={this.handleNameChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="query">
+            Location: <span style={{color: 'red'}}>*</span>
           </label>
           <input
             type="text"
@@ -52,17 +64,6 @@ class Search extends Component {
             value={this.state.locData.query}
             onChange={this.handleLocChange}
             required
-          />
-        </div>
-        <div>
-          <label htmlFor="query">
-            Name/Category
-          </label>
-          <input
-            type="text"
-            name="query"
-            value={this.state.nameData.query}
-            onChange={this.handleNameChange}
           />
         </div>
         <button
