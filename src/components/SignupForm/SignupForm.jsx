@@ -85,7 +85,7 @@ class SignupForm extends Component {
         <div className={styles.inputContainer}>
           <label htmlFor="email" className={styles.label}>Email<span style={{color: 'red'}}>*</span></label>
           <input
-            type="text"
+            type="email"
             autoComplete="off"
             id="email"
             value={email}
@@ -96,6 +96,8 @@ class SignupForm extends Component {
         <div className={styles.inputContainer}>
           <label htmlFor="password" className={styles.label}>Password<span style={{color: 'red'}}>*</span></label>
           <input
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+            title="Password must be minimum 8 characters, at least one uppercase letter, one lowercase letter, and one number"
             type="password"
             autoComplete="off"
             id="password"
@@ -116,7 +118,7 @@ class SignupForm extends Component {
           />
         </div>
         <div className={styles.inputContainer}>
-          <label htmlFor="birthday" className={styles.label}>Birthday<span style={{color: 'red'}}>*</span></label>
+          <label htmlFor="birthday" className={styles.label}>Birthday<span style={{color: 'red'}}>**</span></label>
           <input
             type="date"
             autoComplete="off"
@@ -154,7 +156,8 @@ class SignupForm extends Component {
           <label htmlFor="Other">Other</label>
         </div>
         <div className={styles.inputContainer}>
-          <p>(<span style={{color: 'red'}}>*</span> = required)</p>
+          <p><span style={{color: 'red'}}>*</span> required field</p>
+          <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
         </div>
         <div className={styles.inputContainer}>
           <button disabled={this.isFormInvalid()} className={styles.button}>Sign Up</button>

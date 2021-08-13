@@ -1,10 +1,10 @@
 import styles from './Landing.module.css'
 
-const Landing = ({user}) => {
+const Landing = ({userProfile}) => {
   return (
     <main className={styles.container}>
       <h1>
-        hello, {user ? user.name : "friend"}
+        hello, {userProfile ? userProfile.firstName : "friend"}
       </h1>
     </main>
   )

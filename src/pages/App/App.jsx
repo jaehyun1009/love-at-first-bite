@@ -13,7 +13,6 @@ import RestaurantDetails from '../RestaurantDetails/RestaurantDetails'
 
 class App extends Component {
 	state = {
-		user: authService.getUser(),
 		userProfile: null
 	}
 
@@ -38,12 +37,12 @@ class App extends Component {
 	}
 
 	render() {
-		const { user, userProfile } = this.state
+		const { userProfile } = this.state
 		return (
 			<>
-				<NavBar user={user} history={this.props.history} handleLogout={this.handleLogout} />
+				<NavBar userProfile={userProfile} history={this.props.history} handleLogout={this.handleLogout} />
 				<Route exact path='/'>
-          <Landing user={user} />
+          <Landing userProfile={userProfile} />
         </Route>
 				<Route exact path='/signup'>
           <Signup history={this.props.history} handleSignupOrLogin={this.handleSignupOrLogin}/>
