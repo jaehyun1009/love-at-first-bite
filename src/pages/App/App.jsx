@@ -75,6 +75,8 @@ class App extends Component {
 						<ProfileDetails
 							location={location}
 							userProfile={userProfile}
+							handleAddRestaurant={this.handleAddRestaurant}
+							handleRemoveRestaurant={this.handleRemoveRestaurant}
 							/> :
 						<Redirect to='/login'/>
 				}/>
@@ -85,6 +87,8 @@ class App extends Component {
 						<RestaurantSearch
 							match={match}
 							userProfile={userProfile}
+							handleAddRestaurant={this.handleAddRestaurant}
+							handleRemoveRestaurant={this.handleRemoveRestaurant}
 						/> : <Redirect to='/login'/>
 				}/>
 				<Route
@@ -105,6 +109,8 @@ class App extends Component {
 						<RestaurantDetails
 							match={match}
 							userProfile={userProfile}
+							handleAddRestaurant={this.handleAddRestaurant}
+							handleRemoveRestaurant={this.handleRemoveRestaurant}
 						/> : <Redirect to='/login'/>
 				}/>
 			</>

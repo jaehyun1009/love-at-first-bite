@@ -15,7 +15,13 @@ function index(req, res){
 function userProfile(req, res){
   Profile.findById(req.user.profile)
   .populate('restaurants')
-  .then(profile => {
+  .populate({
+    path: 'restaurants',
+    populate: {
+      path: 'likedBy',
+      model: 'Profile'
+    }
+  }).then(profile => {
     res.json(profile)
   })
 }
