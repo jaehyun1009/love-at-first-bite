@@ -10,11 +10,11 @@ class RestaurantForm extends Component{
       rating: this.props.restaurant.rating,
       price: this.props.restaurant.price,
       phone: this.props.restaurant.display_phone,
-      address: this.props.restaurant.location.display_address.join(' '),
-      city: this.props.restaurant.location.city,
-      zip_code: this.props.restaurant.location.zip_code,
-      state: this.props.restaurant.location.state,
-      country: this.props.restaurant.location.country
+      address: this.props.restaurant.location?.display_address.join(' '),
+      city: this.props.restaurant.location?.city,
+      zip_code: this.props.restaurant.location?.zip_code,
+      state: this.props.restaurant.location?.state,
+      country: this.props.restaurant.location?.country
     }
   }
   handleAddRestaurant = e => {
