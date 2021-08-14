@@ -9,6 +9,7 @@ const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemov
       <h1><DisplayName profile={profile}/></h1>
       <h2>Favorite Restaurants</h2>
       {
+        userProfile && 
         location.state.profile.restaurants.map(restaurant => 
           <div key={restaurant.id}>
             <h5>{restaurant.name}</h5>

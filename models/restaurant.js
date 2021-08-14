@@ -19,7 +19,7 @@ const restaurantSchema = new mongoose.Schema({
     country: String,
     likedBy: [{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Restaurant'
+      ref: 'Profile'
     }]
   },{
   timestamps: true

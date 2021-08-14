@@ -25,7 +25,10 @@ class RestaurantDetails extends Component{
         <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
         <h3>Address: {searchResult?.location?.display_address?.join(', ')}</h3>
         <h2>More Photos</h2>
-        {searchResult?.photos?.map((photo, idx) => <img src={photo} height='200px' alt='extra' key={idx}/>)}
+        {
+          searchResult?.photos?.map((photo, idx) =>
+          <img src={photo} height='200px' alt='extra' key={idx}/>)
+        }
       </>
     )
   }
