@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import DisplayName from '../DisplayName/DisplayName'
 
 const ProfileCard = ({profile}) => {
   return (
@@ -11,7 +10,7 @@ const ProfileCard = ({profile}) => {
           state: {profile}
         }}
       >
-        <h4><DisplayName profile={profile}/></h4>
+        <h4>{profile?.firstName} {profile?.lastName && profile.lastName[0] + '.'}</h4>
       </Link>
     </>
   )

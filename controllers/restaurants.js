@@ -42,14 +42,20 @@ function searchWithoutName(req, res){
 }
 
 function searchOne(req, res){
-  axios.get(`https://api.yelp.com/v3/businesses/${req.params.id}`, {
-    headers: {
-      Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-    },
-  }).then(response => {
-    res.json(response.data)
-  }).catch(err => {
-    console.log(err)
+  Restaurant.findOne({id: req.params.id}).populate('likedBy').then(restaurant => {
+    if (restaurant) {
+      res.json(restaurant)
+    } else {
+      axios.get(`https://api.yelp.com/v3/businesses/${req.params.id}`, {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+        },
+      }).then(response => {
+        res.json(response.data)
+      }).catch(err => {
+        console.log(err)
+      })
+    }
   })
 }
 
