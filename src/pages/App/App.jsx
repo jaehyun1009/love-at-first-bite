@@ -11,6 +11,8 @@ import ProfileDetails from '../ProfileDetails/ProfileDetails'
 import RestaurantSearch from '../RestaurantSearch/RestaurantSearch'
 import RestaurantDetails from '../RestaurantDetails/RestaurantDetails'
 import * as restaurantAPI from '../../services/restaurantService'
+import styles from './App.module.css'
+
 
 class App extends Component {
 	state = {
