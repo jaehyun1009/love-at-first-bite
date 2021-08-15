@@ -2,38 +2,29 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SearchForm from '../SearchForm/SearchForm'
 import ProfileCard from '../ProfileCard/ProfileCard'
+import styles from './NavBar.css'
 
 const NavBar = ({ userProfile, handleLogout, history }) => {
+	const profile = userProfile
 	return (
 		<>
 			{userProfile ? (
-				<nav>
-					<div>
-						<ul>
-							<li>Welcome, <ProfileCard key={userProfile._id} profile={userProfile}/></li>
-							<li>
-                <Link to="/users">Users</Link>
-              </li>
-							<li><Link to='' onClick={handleLogout}>LOG OUT</Link></li>
-							<SearchForm history={history} />
-						</ul>
-					</div>
+				<nav className='menu'>
+						<ol>
+							<li className='menu-item'><Link to="/">HOME</Link></li>
+							<li className='menu-item'><Link to={{ pathname: "/profile", state: {profile}}} >MY PROFILE</Link></li>
+							<li className='menu-item'><Link to='' onClick={handleLogout}>LOG OUT</Link></li>
+							<li className='menu-item'><Link to="/users">Users(Temp)</Link></li>
+							{/* <SearchForm history={history} /> */}
+						</ol>
 				</nav>
 			) : (
-				<nav>
-					<div>
-						<ul>
-							<li>
-								<Link to="/login">Log In</Link>
-							</li>
-							<li>
-                <Link to="/users">Users</Link>
-              </li>
-							<li>
-								<Link to="/signup">Sign Up</Link>
-							</li>
-						</ul>
-					</div>
+				<nav className='menu'>
+						<ol>
+							<li className='menu-item'><Link to="/login">LOG IN</Link></li>
+							<li className='menu-item'><Link to="/signup">SIGN UP</Link></li>
+							<li className='menu-item'><Link to="/users">Users(Temp)</Link></li>
+						</ol>
 				</nav>
 			)}
 		</>
