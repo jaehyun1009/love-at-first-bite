@@ -55,7 +55,9 @@ class App extends Component {
 				<Route 
 					exact path="/"
 					render={({ history }) => 
-					<Landing history={history} userProfile={userProfile}/>
+					authService.getUser() ? 
+					<Landing history={history} userProfile={userProfile}/> : 
+					<Redirect to="/login" />
 				}/>
 				<Route exact path='/signup'>
           <Signup history={this.props.history} handleSignupOrLogin={this.handleSignupOrLogin}/>
