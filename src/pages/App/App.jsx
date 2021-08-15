@@ -52,9 +52,11 @@ class App extends Component {
 		return (
 			<>
 				<NavBar userProfile={userProfile} history={this.props.history} handleLogout={this.handleLogout} />
-				<Route exact path='/'>
-          <Landing userProfile={userProfile} />
-        </Route>
+				<Route 
+					exact path="/"
+					render={({ history }) => 
+					<Landing history={history} userProfile={userProfile}/>
+				}/>
 				<Route exact path='/signup'>
           <Signup history={this.props.history} handleSignupOrLogin={this.handleSignupOrLogin}/>
         </Route>
