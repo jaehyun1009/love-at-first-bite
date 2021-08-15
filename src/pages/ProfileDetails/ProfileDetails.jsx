@@ -1,13 +1,12 @@
 import React from 'react';
-import DisplayName from '../../components/DisplayName/DisplayName'
 import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
 
 const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemoveRestaurant}) => {
   const {profile} = location.state
   return (
     <>
-      <h1><DisplayName profile={profile}/></h1>
-      <h2>Favorite Restaurants</h2>
+      <h1>{profile.firstName} {profile.lastName && profile.lastName + '.'}</h1>
+            <h2>Favorite Restaurants</h2>
       {
         userProfile && 
         location.state.profile.restaurants.map(restaurant => 
