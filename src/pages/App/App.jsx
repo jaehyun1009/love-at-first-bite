@@ -47,7 +47,6 @@ class App extends Component {
 	async componentDidMount(){
 		if (!this.state.userProfile){
 			const userProfile = await profileAPI.getUserProfile()
-			console.log(userProfile)
 			this.setState({userProfile})
 		}
 	}
