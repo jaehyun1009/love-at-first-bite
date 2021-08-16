@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './SearchForm.css'
+import styles from './SearchForm.module.css'
 
 class Search extends Component {
 
@@ -39,13 +39,13 @@ class Search extends Component {
   render(){
     return (
       <>
-      <div className='box'>
+      <div className={styles.box}>
       <form
         ref={this.formRef}
         onSubmit={this.handleSubmit}
         >
         <h2>SEARCH RESTAURANT</h2>
-        <div className='inputBox' >
+        <div className={styles.inputBox}>
           <label htmlFor="query">
             {/* Restaurant Name:  */}
           </label>
@@ -57,7 +57,7 @@ class Search extends Component {
             placeholder='Restaurant Name'
           />
         </div>
-        <div className='inputBox'>
+        <div className={styles.inputBox}>
           <label htmlFor="query"></label>
           <input
             type="text"
@@ -71,7 +71,7 @@ class Search extends Component {
         <button
           type="submit"
           disabled={this.state.invalidForm}
-          class='searchButton'
+          class={styles.searchButton}
         >
           Search
         </button>

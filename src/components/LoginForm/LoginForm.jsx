@@ -28,13 +28,15 @@ class LoginForm extends Component {
   render() {
     const { email, pw } = this.state
     return (
+      <>
+      <div className={styles.box}>
       <form
         autoComplete="off"
         onSubmit={this.handleSubmit}
-        className={styles.container}
       >
-        <div className={styles.inputContainer}>
-          <label htmlFor="email" className={styles.label}>Email</label>
+        <h2>LOGIN</h2>
+        <div className={styles.inputBox}>
+          <label htmlFor="email"></label>
           <input
             type="text"
             autoComplete="off"
@@ -42,10 +44,11 @@ class LoginForm extends Component {
             value={email}
             name="email"
             onChange={this.handleChange}
+            placeholder='Email'
           />
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="password" className={styles.label}>Password</label>
+        <div className={styles.inputBox}>
+          <label htmlFor="password"></label>
           <input
             type="password"
             autoComplete="off"
@@ -53,15 +56,19 @@ class LoginForm extends Component {
             value={pw}
             name="pw"
             onChange={this.handleChange}
+            placeholder='Password'
           />
         </div>
         <div>
-          <button className={styles.button}>Log In</button>
-          <Link to="/">
-            <button>Cancel</button>
-          </Link>
+          <button className={styles.searchButton}>Log In</button>
         </div>
       </form>
+
+      <br />
+      <Link to="/signup"> Not a member? Sign up here. </Link>
+
+    </div>
+    </>
     )
   }
 }

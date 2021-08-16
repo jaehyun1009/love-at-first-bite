@@ -6,11 +6,9 @@ import styles from './FavoriteRestaurants.module.css'
 const FavoriteRestaurants = ({profile, userProfile, handleAddRestaurant, handleRemoveRestaurant}) => {
   return (
     <>
-      <h1>{profile.firstName} {profile.lastName}</h1>
+    <section>
+      <h3>FAVORITE RESTAURANTS</h3>
       <table>
-        <thead>
-          <h3>FAVORITE RESTAURANTS</h3>
-        </thead>
         <tbody>
           <tr>
       {
@@ -41,6 +39,7 @@ const FavoriteRestaurants = ({profile, userProfile, handleAddRestaurant, handleR
       </tr>
         </tbody>
       </table>
+      </section>
     </>
   )
 }

@@ -23,10 +23,6 @@ const RestaurantCard = ({restaurant, userProfile, handleAddRestaurant, handleRem
         </div>
       </div>
     </li>
-
-
-
-      
     </>
   )
 }
