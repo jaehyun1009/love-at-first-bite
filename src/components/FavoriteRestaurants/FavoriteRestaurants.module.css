@@ -1,9 +1,18 @@
+/* section {
+  border: 3px solid white;
+}  */
+
 table { 
 	width: 600px; 
 	border-collapse: collapse; 
-	margin:50px auto;
+	margin: auto;
   text-transform: uppercase;
 	}
+
+h3 {
+  margin-left: auto;
+    margin-right: auto;
+}
 
 /* Zebra striping */
 tr:nth-of-type(odd) { 
