@@ -51,14 +51,16 @@ class SignupForm extends Component {
   render() {
     const { firstName, lastName, email, password, passwordConf, birthday, gender } = this.state
     return (
+      <>
+      <div className={styles.box}>
       <form
         autoComplete="off"
         onSubmit={this.handleSubmit}
-        className={styles.container}
       >
-        <div className={styles.inputContainer}>
+        <h2>SIGN UP</h2>
+
+        <div className={styles.inputBox}>
           <label htmlFor="firstName" className={styles.label}>
-            First Name<span style={{color: 'red'}}>*</span>
           </label>
           <input
             type="text"
@@ -67,11 +69,11 @@ class SignupForm extends Component {
             value={firstName}
             name="firstName"
             onChange={this.handleChange}
+            placeholder='First Name'
           />
         </div>
-        <div className={styles.inputContainer}>
+        <div className={styles.inputBox}>
           <label htmlFor="lastName" className={styles.label}>
-            Last Name
           </label>
           <input
             type="text"
@@ -80,10 +82,11 @@ class SignupForm extends Component {
             value={lastName}
             name="lastName"
             onChange={this.handleChange}
+            placeholder='Last Name'
           />
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="email" className={styles.label}>Email<span style={{color: 'red'}}>*</span></label>
+        <div className={styles.inputBox}>
+          <label htmlFor="email" className={styles.label}></label>
           <input
             type="email"
             autoComplete="off"
@@ -91,10 +94,11 @@ class SignupForm extends Component {
             value={email}
             name="email"
             onChange={this.handleChange}
+            placeholder='Email'
           />
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="password" className={styles.label}>Password<span style={{color: 'red'}}>*</span></label>
+        <div className={styles.inputBox}>
+          <label htmlFor="password" className={styles.label}></label>
           <input
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[!-~]{8,}$"
             title="Password must be minimum 8 characters, at least one uppercase letter, one lowercase letter, and one number"
@@ -104,10 +108,11 @@ class SignupForm extends Component {
             value={password}
             name="password"
             onChange={this.handleChange}
+            placeholder='Password'
           />
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="confirm" className={styles.label}>Confirm Password<span style={{color: 'red'}}>*</span></label>
+        <div className={styles.inputBox}>
+          <label htmlFor="confirm" className={styles.label}></label>
           <input
             type="password"
             autoComplete="off"
@@ -115,10 +120,12 @@ class SignupForm extends Component {
             value={passwordConf}
             name="passwordConf"
             onChange={this.handleChange}
+            placeholder='Confirm Password'
           />
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="birthday" className={styles.label}>Birthday<span style={{color: 'red'}}>**</span></label>
+        <div className={styles.inputBox}>
+          <label htmlFor="birthday" className={styles.label}>Birthday</label>
+          <br /><br />
           <input
             type="date"
             autoComplete="off"
@@ -128,8 +135,15 @@ class SignupForm extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="gender" className={styles.label}>Gender<span style={{color: 'red'}}>*</span></label>
+        <div className={styles.inputBox}>
+          <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
+        </div>
+        <br />
+        
+        <div >
+          <label htmlFor="gender" className={styles.label}>Gender</label>
+          <br />
+          <br />
           <input
             type="radio"
             id="Male"
@@ -155,17 +169,13 @@ class SignupForm extends Component {
           />
           <label htmlFor="Other">Other</label>
         </div>
-        <div className={styles.inputContainer}>
-          <p><span style={{color: 'red'}}>*</span> required field</p>
-          <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
-        </div>
-        <div className={styles.inputContainer}>
-          <button disabled={this.isFormInvalid()} className={styles.button}>Sign Up</button>
-          <Link to="/">
-            <button>Cancel</button>
-          </Link>
-        </div>
+
+        <button disabled={this.isFormInvalid()} className={styles.searchButton}>Sign Up</button>
       </form>
+      <br />
+      <Link to='/login'> Already a member? Login here. </Link>
+      </div>
+      </>
     )
   }
 }
