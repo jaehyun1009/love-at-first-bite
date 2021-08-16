@@ -124,9 +124,9 @@ class App extends Component {
 				}/>
 				<Route
 					exact path='/messages'
-					render={()=>
+					render={({location})=>
 					authService.getUser() ?
-					<Messages/> : <Redirect to='/login'/>
+					<Messages location = {location}/> : <Redirect to='/login'/>
 				}/>
 				</main>
 			</>

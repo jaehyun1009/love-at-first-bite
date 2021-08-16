@@ -9,12 +9,16 @@ class Messaged extends Component {
 async componentDidMount(){
   // List of messages of everyone I Messaged
   const messaged = await messageService.getMessaged()
-  this.setState({messaged})
+  console.log(messaged)
+  this.setState({messaged: messaged})
 
 }
   render() { 
     return (
       <>
+      {this.state.messaged?.map(messaged=>
+       <h1>{messaged.otherPerson.firstName}</h1> 
+        )}
       </>
     );
   }
