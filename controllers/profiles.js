@@ -13,7 +13,6 @@ function index(req, res){
 }
 
 function userProfile(req, res){
-  console.log(req.user.profile)
   Profile.findById(req.user.profile)
   .populate('restaurants')
   .populate({

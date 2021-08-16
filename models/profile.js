@@ -4,7 +4,7 @@ const messagedSchema = new mongoose.Schema({
   newestMessage: String,
   otherPerson: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Proflie"
+    ref: "Profile"
   }
 })
 
