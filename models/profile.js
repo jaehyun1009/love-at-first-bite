@@ -1,5 +1,13 @@
 import mongoose from 'mongoose'
 
+const messagedSchema = new mongoose.Schema({
+  newestMessage: String,
+  otherPerson: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Proflie"
+  }
+})
+
 const profileSchema = new mongoose.Schema(
   {
     firstName: String,
@@ -31,7 +39,9 @@ const profileSchema = new mongoose.Schema(
     restaurants: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Restaurant'
-    }]
+    }],
+    messaged: [messagedSchema]
+
   },
   {
     timestamps: true,
