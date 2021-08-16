@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as restaurantAPI from '../../services/restaurantService'
+import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
 
 class RestaurantDetails extends Component{
   state = {
@@ -27,7 +28,16 @@ class RestaurantDetails extends Component{
             <h3>Price Rating: {searchResult?.price}</h3>
             <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
             <h3>Address: {searchResult?.address}</h3>
-            <h2>Others who liked this restaurant</h2>
+            <h2>Others who liked this restaurant_</h2>
+            {
+              console.log(searchResult)
+            }
+            <RestaurantForm
+              restaurant={searchResult}
+              userProfile={this.props.userProfile}
+              handleAddRestaurant={this.props.handleAddRestaurant}
+              handleRemoveRestaurant={this.props.handleRemoveRestaurant}
+            />
           </> : <>
             <h1>{searchResult?.name}</h1>
             <img src={searchResult?.image_url} width='500px' alt='business'/>
@@ -39,6 +49,15 @@ class RestaurantDetails extends Component{
             <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
             <h3>Address: {searchResult?.location?.display_address?.join(', ')}</h3>
             <h2>Others who liked this restaurant</h2>
+            {
+              console.log(searchResult)
+            }
+            <RestaurantForm
+              restaurant={searchResult}
+              userProfile={this.props.userProfile}
+              handleAddRestaurant={this.props.handleAddRestaurant}
+              handleRemoveRestaurant={this.props.handleRemoveRestaurant}
+            />
           </>
         }
 

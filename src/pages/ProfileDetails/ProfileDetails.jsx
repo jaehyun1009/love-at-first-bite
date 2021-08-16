@@ -6,7 +6,7 @@ const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemov
   return (
     <>
       <h1>{profile.firstName} {profile.lastName && profile.lastName + '.'}</h1>
-            <h2>Favorite Restaurants</h2>
+      <h2>Favorite Restaurants</h2>
       {
         userProfile && 
         location.state.profile.restaurants.map(restaurant => 

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import styles from './SearchForm.css'
 
-
-
-
 class Search extends Component {
 
   state = {
