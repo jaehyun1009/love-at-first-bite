@@ -13,3 +13,5 @@ const router = Router();
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get('/messaged',checkAuth,messagesCtrl.messaged)
+router.get('/messages/:id',checkAuth,messagesCtrl.messages)
+router.post('/new/:id',checkAuth,messagesCtrl.create )
