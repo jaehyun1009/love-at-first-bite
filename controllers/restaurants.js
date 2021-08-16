@@ -42,7 +42,13 @@ function searchWithoutName(req, res){
 }
 
 function searchOne(req, res){
-  Restaurant.findOne({id: req.params.id}).populate('likedBy').then(restaurant => {
+  Restaurant.findOne({id: req.params.id}).populate('likedBy').populate({
+    path: 'likedBy', 
+    populate: {
+      path: 'restaurants',
+      populate: 'Restaurant'
+    }
+  }).then(restaurant => {
     if (restaurant) {
       res.json(restaurant)
     } else {
