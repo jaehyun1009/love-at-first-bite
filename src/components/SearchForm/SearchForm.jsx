@@ -71,6 +71,7 @@ class Search extends Component {
         <button
           type="submit"
           disabled={this.state.invalidForm}
+          class='searchButton'
         >
           Search
         </button>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import * as restaurantAPI from '../../services/restaurantService'
+import styles from './RestaurantSearch.module.css'
+
 
 class RestaurantSearch extends Component {
   state = {
@@ -30,7 +32,9 @@ class RestaurantSearch extends Component {
   render(){
     return (
       <>
-        <h1>Results</h1>
+        <h1>Search Results</h1>
+        <div className={styles.main}>
+          <ul className={styles.cards}>
         {this.state.searchResults?.map(restaurant => 
           <RestaurantCard
             restaurant={restaurant}
@@ -40,6 +44,8 @@ class RestaurantSearch extends Component {
             handleRemoveRestaurant={this.props.handleRemoveRestaurant}
           />
         )}
+        </ul>
+        </div>
       </>
     )
   }
