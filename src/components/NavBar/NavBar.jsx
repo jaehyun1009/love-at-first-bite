@@ -15,6 +15,7 @@ const NavBar = ({ userProfile, handleLogout, history }) => {
 							<li className='menu-item'><Link to={{ pathname: "/profile", state: {profile}}} >MY PROFILE</Link></li>
 							<li className='menu-item'><Link to='' onClick={handleLogout}>LOG OUT</Link></li>
 							<li className='menu-item'><Link to="/users">Users(Temp)</Link></li>
+							<li> <Link to='/messages'>messages</Link></li>
 							{/* <SearchForm history={history} /> */}
 						</ol>
 				</nav>

@@ -11,12 +11,14 @@ import ProfileDetails from '../ProfileDetails/ProfileDetails'
 import RestaurantSearch from '../RestaurantSearch/RestaurantSearch'
 import RestaurantDetails from '../RestaurantDetails/RestaurantDetails'
 import * as restaurantAPI from '../../services/restaurantService'
+import Messages from '../Messages/Messages'
 import styles from './App.module.css'
 
 
 class App extends Component {
 	state = {
-		userProfile: null
+		userProfile: null,
+		user: authService.getUser()
 	}
 
 	handleLogout = () => {
@@ -45,6 +47,7 @@ class App extends Component {
 	async componentDidMount(){
 		if (!this.state.userProfile){
 			const userProfile = await profileAPI.getUserProfile()
+			console.log(userProfile)
 			this.setState({userProfile})
 		}
 	}
@@ -119,6 +122,13 @@ class App extends Component {
 							handleRemoveRestaurant={this.handleRemoveRestaurant}
 						/> : <Redirect to='/login'/>
 				}/>
+				<Route
+				exact path='/messages'
+				render={()=>
+				authService.getUser() ?
+				<Messages/> : <Redirect to='/login'/>
+			}
+				/>
 			</>
 		)
 	}

@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import * as chatsCtrl from '../controllers/chats.js'
+import * as messagesCtrl from '../controllers/messages.js'
 import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
 
 export {
@@ -12,3 +12,4 @@ const router = Router();
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
+router.get('/messaged',checkAuth,messagesCtrl.messaged)
