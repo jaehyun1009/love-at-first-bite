@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import * as restaurantAPI from '../../services/restaurantService'
 import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
+import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import { Link } from 'react-router-dom'
 
 class RestaurantDetails extends Component{
   state = {
-    searchResult: {}
+    searchResult: {},
   }
   async componentDidMount(){
     const searchResult = await restaurantAPI.searchOne(this.props.match.params.id)
@@ -34,7 +35,7 @@ class RestaurantDetails extends Component{
                 <h2>Others who liked this restaurant</h2>
                 { searchResult?.likedBy?.map(profile => {
                     if (profile._id !== this.props.userProfile?._id)
-                      return <h3 key={profile._id}>{profile.firstName}</h3>
+                      return <ProfileCard key={profile._id} profile={profile} />
                   })
                 }
               </>

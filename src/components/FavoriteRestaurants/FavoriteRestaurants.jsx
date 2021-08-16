@@ -6,7 +6,7 @@ import styles from './FavoriteRestaurants.module.css'
 const FavoriteRestaurants = ({profile, userProfile, handleAddRestaurant, handleRemoveRestaurant}) => {
   return (
     <>
-      <h1>{profile.firstName} {profile.lastName && profile.lastName + '.'}</h1>
+      <h1>{profile.firstName} {profile.lastName}</h1>
       <table>
         <thead>
           <h3>FAVORITE RESTAURANTS</h3>
