@@ -15,11 +15,11 @@ const RestaurantCard = ({restaurant, userProfile, handleAddRestaurant, handleRem
           <p className={styles.card_text}>Rating: {restaurant.rating}</p>
           <p className={styles.card_text}>Price: {restaurant.price}</p>
           <RestaurantForm
-        restaurant={restaurant}
-        userProfile={userProfile}
-        handleAddRestaurant={handleAddRestaurant}
-        handleRemoveRestaurant={handleRemoveRestaurant}
-      />
+            restaurant={restaurant}
+            userProfile={userProfile}
+            handleAddRestaurant={handleAddRestaurant}
+            handleRemoveRestaurant={handleRemoveRestaurant}
+          />
         </div>
       </div>
     </li>

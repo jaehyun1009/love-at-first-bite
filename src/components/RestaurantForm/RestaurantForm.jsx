@@ -60,9 +60,6 @@ class RestaurantForm extends Component{
     return (
       <>
         {
-          console.log(this.state.formData)
-        }
-        {
           this.props.userProfile?.restaurants?.some(restaurant => restaurant.id === this.state.formData.id) ?
           <button className={styles.btn} onClick={this.handleRemoveRestaurant}>REMOVE FROM FAVORITES</button> :
           <button className={styles.btn} onClick={this.handleAddRestaurant}>ADD TO FAVORITES</button>
