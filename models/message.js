@@ -14,6 +14,8 @@ const messageSchema = new mongoose.Schema({
     ref: 'Profile'
   },
   content: String
+}, {
+  timestamps: true,
 })
 
 const Message = mongoose.model('Message',messageSchema)
