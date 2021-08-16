@@ -15,6 +15,7 @@ function messaged(req,res){
       path: 'otherPerson'
     }
   })
+  //.sort({messaged: {updatedAt: -1}})
   .then(profile=> res.json(profile.messaged))
 }
 
@@ -32,23 +33,28 @@ res.json(messages)
 }
 
 function create (req, res) {
+  // find whos logged in
   Profile.findById(req.user.profile)
   .then(loggedInProfile => {
+
     Profile.findById(req.params.id)
     // whos being messaged
     .then(beingMessagedProfile => {
-      // have I messaged this person before
+      // have I messaged this person before return truth or false
       if(loggedInProfile.messaged.some(messagedProfile => {
         return messagedProfile.otherPerson.toString() === beingMessagedProfile._id.toString()})) {
+          // extracting message
         const messaged = loggedInProfile.messaged.find(messaged => messaged.otherPerson.toString() === beingMessagedProfile._id.toString())
+        // find index of the message
+        // who sent the latest message. removing the old message that was displayed and showing the new one
         const idx = loggedInProfile.messaged.findIndex(mesaged => messaged.otherPerson === beingMessagedProfile._id.toString())
         messaged.newestMessage = req.body.content
         loggedInProfile.messaged.splice(idx, 1, messaged)
         loggedInProfile.save()
+        // Same as above but for the other user. Matching the newest messages
         .then(loggedInProfile => {
           const messaged = beingMessagedProfile.messaged.find(messaged => messaged.otherPerson.toString() === loggedInProfile._id.toString())
           const idx = beingMessagedProfile.messaged.findIndex(messaged => messaged.otherPerson.toString() === loggedInProfile._id.toString())
-          messaged.newestMessage = req.body.content
           beingMessagedProfile.messaged.splice(idx, 1, messaged)
           beingMessagedProfile.save()
           .then(beingMessagedProfile => {
@@ -56,6 +62,7 @@ function create (req, res) {
             req.body.to = beingMessagedProfile._id
             let message = new Message(req.body)
             message.save()
+            // return messages as json 
             .then(message => {
               res.json(message)
             })
@@ -67,18 +74,22 @@ function create (req, res) {
         loggedInProfile.messaged.push(req.body)
         loggedInProfile.save()
         .then(loggedInProfile => {
+          // otherPersom turns into loggedInProfile
           req.body.otherPerson = loggedInProfile._id
-          req.body.newestMesage = req.body.content
+          // push newest message and other person
           beingMessagedProfile.messaged.push(req.body)
           beingMessagedProfile.save()
           .then(beingMessagedProfile => {
+            // delete key value pairs
             delete req.body.otherPerson
             delete req.body.newestMessage
+            // sets up refrences in dataBase
             req.body.from = loggedInProfile._id
             req.body.to = beingMessagedProfile._id
             let message = new Message(req.body)
             message.save()
             .then(message => {
+              // send new message back 
               res.json(message)
             })
           })

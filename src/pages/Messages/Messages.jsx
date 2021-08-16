@@ -6,12 +6,15 @@ class Messages extends Component {
   state = {
     messageShow: false,
   }
+  handleMessageShow = (profile) => {
+    
+  }
   render() { 
     return (
       <>
       <Messaged/>
       {this.state.messageShow &&
-      <MessageShow/> 
+      <MessageShow profile=''/> 
 
       }
       {this.props.location.state&&
