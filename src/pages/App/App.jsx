@@ -57,6 +57,7 @@ class App extends Component {
 			<>
 				<main>
 				<NavBar userProfile={userProfile} history={this.props.history} handleLogout={this.handleLogout} />
+				<main> 
 				<Route 
 					exact path="/"
 					render={({ history }) => 

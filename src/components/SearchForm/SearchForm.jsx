@@ -39,32 +39,33 @@ class Search extends Component {
   render(){
     return (
       <>
+      <div className='box'>
       <form
         ref={this.formRef}
         onSubmit={this.handleSubmit}
         >
-        
-        <div>
+        <h2>SEARCH RESTAURANT</h2>
+        <div className='inputBox' >
           <label htmlFor="query">
-            Restaurant Name: 
+            {/* Restaurant Name:  */}
           </label>
           <input
             type="text"
             name="query"
             value={this.state.nameData.query}
             onChange={this.handleNameChange}
+            placeholder='Restaurant Name'
           />
         </div>
-        <div>
-          <label htmlFor="query">
-            Location: <span style={{color: 'red'}}>*</span>
-          </label>
+        <div className='inputBox'>
+          <label htmlFor="query"></label>
           <input
             type="text"
             name="query"
             value={this.state.locData.query}
             onChange={this.handleLocChange}
             required
+            placeholder='City,State or Zip Code'
           />
         </div>
         <button
@@ -74,6 +75,7 @@ class Search extends Component {
           Search
         </button>
       </form>
+      </div>
       </>
     )
   }
