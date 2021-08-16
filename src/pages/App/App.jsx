@@ -129,6 +129,7 @@ class App extends Component {
 				<Messages/> : <Redirect to='/login'/>
 			}
 				/>
+				</main>
 			</>
 		)
 	}
