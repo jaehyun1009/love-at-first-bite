@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as restaurantAPI from '../../services/restaurantService'
 import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
+import { Link } from 'react-router-dom'
 
 class RestaurantDetails extends Component{
   state = {
@@ -28,7 +29,7 @@ class RestaurantDetails extends Component{
             <h3>Price Rating: {searchResult?.price}</h3>
             <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
             <h3>Address: {searchResult?.address}</h3>
-            <h2>Others who liked this restaurant_</h2>
+            <h2>Others who liked this restaurant</h2>
             <RestaurantForm
               key={searchResult?.id}
               restaurant={searchResult}
@@ -36,6 +37,12 @@ class RestaurantDetails extends Component{
               handleAddRestaurant={this.props.handleAddRestaurant}
               handleRemoveRestaurant={this.props.handleRemoveRestaurant}
             />
+            <h2>This restaurant is also liked by</h2>
+            {
+              searchResult?.likedBy?.map(profile => 
+                <h3>{profile.firstName}</h3>
+              )
+            }
           </> : <>
             <h1>{searchResult?.name}</h1>
             <img src={searchResult?.image_url} width='500px' alt='business'/>
