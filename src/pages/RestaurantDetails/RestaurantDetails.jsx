@@ -29,9 +29,6 @@ class RestaurantDetails extends Component{
             <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
             <h3>Address: {searchResult?.address}</h3>
             <h2>Others who liked this restaurant_</h2>
-            {
-              console.log(searchResult)
-            }
             <RestaurantForm
               restaurant={searchResult}
               userProfile={this.props.userProfile}
@@ -49,10 +46,8 @@ class RestaurantDetails extends Component{
             <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
             <h3>Address: {searchResult?.location?.display_address?.join(', ')}</h3>
             <h2>Others who liked this restaurant</h2>
-            {
-              console.log(searchResult)
-            }
             <RestaurantForm
+              key={searchResult?.id}
               restaurant={searchResult}
               userProfile={this.props.userProfile}
               handleAddRestaurant={this.props.handleAddRestaurant}
@@ -60,7 +55,6 @@ class RestaurantDetails extends Component{
             />
           </>
         }
-
       </>
     )
   }

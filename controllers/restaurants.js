@@ -44,7 +44,6 @@ function searchWithoutName(req, res){
 function searchOne(req, res){
   Restaurant.findOne({id: req.params.id}).populate('likedBy').then(restaurant => {
     if (restaurant) {
-      console.log('fWEWFWFW',restaurant)
       res.json(restaurant)
     } else {
       axios.get(`https://api.yelp.com/v3/businesses/${req.params.id}`, {
