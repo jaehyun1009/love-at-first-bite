@@ -83,7 +83,7 @@
   color: white;
 }
 
-button {
+.searchButton {
   background-color: transparent;
     border-radius: 12px;
     border: 2px solid white;

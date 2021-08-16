@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import styles from './RestaurantForm.module.css'
+
 
 class RestaurantForm extends Component{
   state = {
@@ -62,8 +64,8 @@ class RestaurantForm extends Component{
         }
         {
           this.props.userProfile?.restaurants?.some(restaurant => restaurant.id === this.state.formData.id) ?
-          <button onClick={this.handleRemoveRestaurant}>REMOVE</button> :
-          <button onClick={this.handleAddRestaurant}>ADD</button>
+          <button className={styles.btn} onClick={this.handleRemoveRestaurant}>REMOVE FROM FAVORITES</button> :
+          <button className={styles.btn} onClick={this.handleAddRestaurant}>ADD TO FAVORITES</button>
         }
       </>
     )
