@@ -29,7 +29,16 @@ class RestaurantDetails extends Component{
             <h3>Price Rating: {searchResult?.price}</h3>
             <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
             <h3>Address: {searchResult?.address}</h3>
-            <h2>Others who liked this restaurant</h2>
+            { !!searchResult?.likedBy?.find(profile => profile._id === this.props.userProfile?._id) && 
+              <>
+                <h2>Others who liked this restaurant</h2>
+                { searchResult?.likedBy?.map(profile => {
+                    if (profile._id !== this.props.userProfile?._id)
+                      return <h3 key={profile._id}>{profile.firstName}</h3>
+                  })
+                }
+              </>
+            }
             <RestaurantForm
               key={searchResult?.id}
               restaurant={searchResult}
@@ -37,12 +46,6 @@ class RestaurantDetails extends Component{
               handleAddRestaurant={this.props.handleAddRestaurant}
               handleRemoveRestaurant={this.props.handleRemoveRestaurant}
             />
-            <h2>This restaurant is also liked by</h2>
-            {
-              searchResult?.likedBy?.map(profile => 
-                <h3>{profile.firstName}</h3>
-              )
-            }
           </> : <>
             <h1>{searchResult?.name}</h1>
             <img src={searchResult?.image_url} width='500px' alt='business'/>
@@ -53,7 +56,6 @@ class RestaurantDetails extends Component{
             <h3>Price Rating: {searchResult?.price}</h3>
             <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
             <h3>Address: {searchResult?.location?.display_address?.join(', ')}</h3>
-            <h2>Others who liked this restaurant</h2>
             <RestaurantForm
               key={searchResult?.id}
               restaurant={searchResult}
