@@ -58,9 +58,6 @@ class RestaurantForm extends Component{
     return (
       <>
         {
-          console.log(this.state.formData)
-        }
-        {
           this.props.userProfile?.restaurants?.some(restaurant => restaurant.id === this.state.formData.id) ?
           <button onClick={this.handleRemoveRestaurant}>REMOVE</button> :
           <button onClick={this.handleAddRestaurant}>ADD</button>

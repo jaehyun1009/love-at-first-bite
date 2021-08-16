@@ -55,6 +55,7 @@ class App extends Component {
 		const { userProfile } = this.state
 		return (
 			<>
+				<main>
 				<NavBar userProfile={userProfile} history={this.props.history} handleLogout={this.handleLogout} />
 				<main> 
 				<Route 
@@ -123,12 +124,11 @@ class App extends Component {
 						/> : <Redirect to='/login'/>
 				}/>
 				<Route
-				exact path='/messages'
-				render={()=>
-				authService.getUser() ?
-				<Messages/> : <Redirect to='/login'/>
-			}
-				/>
+					exact path='/messages'
+					render={()=>
+					authService.getUser() ?
+					<Messages/> : <Redirect to='/login'/>
+				}/>
 				</main>
 			</>
 		)

@@ -18,6 +18,7 @@ const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemov
             {
               (profile._id === userProfile._id) && 
               <RestaurantForm
+                key={restaurant.id}
                 restaurant={restaurant}
                 userProfile={userProfile}
                 handleAddRestaurant={handleAddRestaurant}
