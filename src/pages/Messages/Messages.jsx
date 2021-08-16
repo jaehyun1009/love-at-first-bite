@@ -11,8 +11,11 @@ class Messages extends Component {
       <>
       <Messaged/>
       {this.state.messageShow &&
-      <MessageShow/>
+      <MessageShow/> 
 
+      }
+      {this.props.location.state&&
+      <MessageShow profile = {this.props.location.state}/>
       }
       </>
     );
