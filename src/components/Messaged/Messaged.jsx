@@ -9,7 +9,6 @@ class Messaged extends Component {
 async componentDidMount(){
   // List of messages of everyone I Messaged
   const messaged = await messageService.getMessaged()
-  console.log(messaged)
   this.setState({messaged: messaged})
 
 }
