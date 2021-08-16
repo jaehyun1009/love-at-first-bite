@@ -30,6 +30,7 @@ class RestaurantDetails extends Component{
             <h3>Address: {searchResult?.address}</h3>
             <h2>Others who liked this restaurant_</h2>
             <RestaurantForm
+              key={searchResult?.id}
               restaurant={searchResult}
               userProfile={this.props.userProfile}
               handleAddRestaurant={this.props.handleAddRestaurant}

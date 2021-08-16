@@ -12,6 +12,7 @@ const RestaurantCard = ({restaurant, userProfile, handleAddRestaurant, handleRem
       <h3>Address: {restaurant.location.display_address?.join(', ')}</h3>
       <h3>Country: {restaurant.location.country}</h3>
       <RestaurantForm
+        key={restaurant.id}
         restaurant={restaurant}
         userProfile={userProfile}
         handleAddRestaurant={handleAddRestaurant}
