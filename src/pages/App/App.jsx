@@ -79,9 +79,10 @@ class App extends Component {
 				}/>
 				<Route
 					exact path="/profile"
-					render={({location}) =>
+					render={({history, location}) =>
 						authService.getUser() ?
 						<ProfileDetails
+							history={history}
 							location={location}
 							userProfile={userProfile}
 							handleAddRestaurant={this.handleAddRestaurant}
