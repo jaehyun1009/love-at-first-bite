@@ -20,3 +20,15 @@ export function getAllProfiles(){
       mode: 'cors'
     }).then(res => res.json())
 }
+
+export function updateProfile(profile){
+  return fetch(
+    `${BASE_URL}updateProfile`,
+    {
+      method: 'PATCH',
+      headers: { Authorization: "Bearer " + tokenService.getToken() },
+      body: JSON.stringify(profile)
+    },{
+      mode: 'cors'
+    }).then(res => res.json())
+}

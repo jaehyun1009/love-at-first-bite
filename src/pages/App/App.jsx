@@ -52,7 +52,7 @@ class App extends Component {
 	}
 
 	render() {
-		const { userProfile } = this.state
+		const { user, userProfile } = this.state
 		return (
 			<>
 				<main>
@@ -82,6 +82,7 @@ class App extends Component {
 					render={({history, location}) =>
 						authService.getUser() ?
 						<ProfileDetails
+							user={user}
 							history={history}
 							location={location}
 							userProfile={userProfile}

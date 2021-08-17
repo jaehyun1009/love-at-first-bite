@@ -5,7 +5,7 @@ import styles from './ProfileDetails.module.css'
 import FavoriteRestaurants from '../../components/FavoriteRestaurants/FavoriteRestaurants'
 import { Link } from 'react-router-dom'
 
-const ProfileDetails = ({history, location, userProfile, handleAddRestaurant, handleRemoveRestaurant}) => {
+const ProfileDetails = ({user, history, location, userProfile, handleAddRestaurant, handleRemoveRestaurant}) => {
   const {profile} = location.state
   return (
     <>
@@ -24,7 +24,9 @@ const ProfileDetails = ({history, location, userProfile, handleAddRestaurant, ha
     </Link>
 
     <SettingsForm 
+      user={user}
       history={history}
+      userProfile={userProfile}
     />
 
     </>
