@@ -14,3 +14,4 @@ const router = Router();
 router.use(decodeUserFromToken)
 router.get('/userProfile', checkAuth, profilesCtrl.userProfile)
 router.get('/', checkAuth, profilesCtrl.index)
+router.patch('/updateProfile', checkAuth, profilesCtrl.updateProfile)
