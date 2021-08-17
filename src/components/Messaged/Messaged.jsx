@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import * as messageService from '../../services/message'
+import styles from './Messaged.module.css'
+
 
 
 class Messaged extends Component {
@@ -23,5 +25,5 @@ async componentDidMount(){
     );
   }
 }
- 
+
 export default Messaged;

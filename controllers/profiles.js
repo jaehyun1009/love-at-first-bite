@@ -4,6 +4,7 @@ import { Restaurant } from '../models/restaurant.js'
 export {
   index,
   userProfile,
+  updateProfile
 }
 
 function index(req, res){
@@ -22,6 +23,16 @@ function userProfile(req, res){
       model: 'Profile'
     }
   }).then(profile => {
+    console.log(profile)
+    res.json(profile)
+  })
+}
+
+function updateProfile(req, res){
+  Profile.findById(req.user.profile)
+  .populate('profile')
+
+  .then(profile => {
     console.log(profile)
     res.json(profile)
   })

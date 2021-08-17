@@ -44,6 +44,7 @@ class App extends Component {
 		this.setState({userProfile: updatedProfile})
 	}
 
+
 	async componentDidMount(){
 		if (!this.state.userProfile){
 			const userProfile = await profileAPI.getUserProfile()

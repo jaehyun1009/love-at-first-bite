@@ -27,7 +27,7 @@ class MessageShow extends Component {
     return (
       <>
       {this.state.messages?.map(message=>
-       <h1>{message.content}</h1> 
+       <h3>{message.content}</h3> 
         )}
       <form onSubmit={this.handleSubmit}>
       <textarea name="content" id="content" cols="30" rows="10" onChange={this.handleChange}>{this.state.content}</textarea>

@@ -15,6 +15,14 @@ const profileSchema = new mongoose.Schema(
     email: String,
     profilePic: String,
     birthday: Date,
+    location: String,
+    aboutMe: String,
+    userGender: String,
+    sexualOrientation: String,
+    searchingFor: [{
+      type: String,
+      enum: ['Love', 'Friendship', 'Both'],
+    }],
     minimumAge: {
       type: Number,
       min: 18,
