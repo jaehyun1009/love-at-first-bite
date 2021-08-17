@@ -6,7 +6,6 @@ import * as authService from '../../services/authService'
 
 class ProfileInfo extends Component {
   state = {
-    formData: {
     firstName: this.props?.profile?.firstName,
     lastName: this.props?.profile?.lastName,
     email: this.props?.profile?.email,
@@ -16,22 +15,23 @@ class ProfileInfo extends Component {
     userGender: this.props?.profile?.userGender,
     sexualOrientation: this.props?.profile?.sexualOrientation,
     searchingFor: this.props?.profile?.searchingFor,
-  }
 }
 
 formRef = React.createRef();
 
-// handleSubmit = e => {
-//   e.preventDefault();
-//   this.props.handleUpdateProfile(this.state.formData);
-// };
+handleSubmit = e => {
+  e.preventDefault();
+  this.props.handleUpdateProfile(this.state);
+};
+
 
 handleChange = e => {
-  const formData = {...this.state.formData, [e.target.name]: e.target.value};
   this.setState({
-    formData
-  });
-};
+    [e.target.name]: e.target.value
+  })
+}
+
+
 
   render() {
     const { firstName, lastName, email, profilePic, location, aboutMe, userGender, sexualOrientation, searchingFor} = this.state
@@ -46,8 +46,8 @@ handleChange = e => {
             type="text"
             autoComplete="off"
             id="firstName"
-            defaultValue={this.state.formData.firstName}
             name="firstName"
+            value= {this.state.firstName}
             onChange={this.handleChange}
           />
         </div>
@@ -58,7 +58,7 @@ handleChange = e => {
             type="text"
             autoComplete="off"
             id="lastName"
-            defaultValue={this.state.formData.lastName}
+            value={this.state.lastName}
             name="lastName"
             onChange={this.handleChange}
           />
@@ -69,7 +69,7 @@ handleChange = e => {
             type="email"
             autoComplete="off"
             id="email"
-            defaultValue={this.state.formData.email}
+            value={this.state.email}
             name="email"
             onChange={this.handleChange}
           />
@@ -80,7 +80,7 @@ handleChange = e => {
             type="profilePic"
             autoComplete="off"
             id="profilePic"
-            defaultValue={this.state.formData.profilePic}
+            defaultValue={this.state.profilePic}
             name="profilePic"
             onChange={this.handleChange}
           />
@@ -91,7 +91,7 @@ handleChange = e => {
             type="location"
             autoComplete="off"
             id="location"
-            defaultValue={this.state.formData.location}
+            value={this.state.location}
             name="location"
             onChange={this.handleChange}
           />
@@ -102,7 +102,7 @@ handleChange = e => {
             type="aboutMe"
             autoComplete="off"
             id="aboutMe"
-            defaultValue={this.state.formData.aboutMe}
+            value={this.state.aboutMe}
             name="aboutMe"
             onChange={this.handleChange}
           />
@@ -113,7 +113,7 @@ handleChange = e => {
             type="userGender"
             autoComplete="off"
             id="userGender"
-            defaultValue={this.state.formData.userGender}
+            value={this.state.userGender}
             name="userGender"
             onChange={this.handleChange}
           />
@@ -125,7 +125,7 @@ handleChange = e => {
             type="sexualOrientation"
             autoComplete="off"
             id="sexualOrientation"
-            defaultValue={this.state.formData.sexualOrientation}
+            value={this.state.sexualOrientation}
             name="sexualOrientation"
             onChange={this.handleChange}
           />
@@ -136,7 +136,7 @@ handleChange = e => {
             name="searchingFor" 
             type="searchingFor"
             id="searchingFor"
-            defaultValue={this.state.formData.searchingFor}
+            value={this.state.searchingFor}
             onChange={this.handleChange}
             >
               <option value=""></option>

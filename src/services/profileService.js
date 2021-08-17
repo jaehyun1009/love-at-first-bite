@@ -20,3 +20,19 @@ export function getAllProfiles(){
       mode: 'cors'
     }).then(res => res.json())
 }
+
+
+
+export function updatedProfile(profile) {
+  console.log('going to update the profile', profile);
+  return fetch(
+    `${BASE_URL}userProfile`, 
+    {
+    method: 'PUT', 
+    body: JSON.stringify(profile),
+    headers: { 'Content-Type': 'application/json', Authorization: "Bearer " + tokenService.getToken()},
+  },
+  { mode: "cors"}
+  )
+  .then(res => res.json())
+}

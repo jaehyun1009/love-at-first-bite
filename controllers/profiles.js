@@ -29,11 +29,11 @@ function userProfile(req, res){
 }
 
 function updateProfile(req, res){
-  Profile.findById(req.user.profile)
-  .populate('profile')
+  console.log('test', req.body);
+  Profile.findByIdAndUpdate(req.user.profile, req.body, {new: true})
 
   .then(profile => {
-    console.log(profile)
+    console.log(profile);
     res.json(profile)
   })
 }

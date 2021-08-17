@@ -13,6 +13,7 @@ import RestaurantDetails from '../RestaurantDetails/RestaurantDetails'
 import * as restaurantAPI from '../../services/restaurantService'
 import Messages from '../Messages/Messages'
 import styles from './App.module.css'
+// import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 
 
 class App extends Component {
@@ -44,6 +45,10 @@ class App extends Component {
 		this.setState({userProfile: updatedProfile})
 	}
 
+	handleUpdateProfile = async profile => {
+		const updatedProfile = await profileAPI.updatedProfile(profile)
+		this.setState({profile: updatedProfile})
+	}
 
 	async componentDidMount(){
 		if (!this.state.userProfile){
@@ -87,6 +92,7 @@ class App extends Component {
 							userProfile={userProfile}
 							handleAddRestaurant={this.handleAddRestaurant}
 							handleRemoveRestaurant={this.handleRemoveRestaurant}
+							handleUpdateProfile={this.handleUpdateProfile}
 							/> :
 						<Redirect to='/login'/>
 				}/>
