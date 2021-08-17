@@ -29,7 +29,6 @@ function userProfile(req, res){
 }
 
 function updateProfile(req, res){
-  console.log('test', req.body);
   Profile.findByIdAndUpdate(req.user.profile, req.body, {new: true})
 
   .then(profile => {

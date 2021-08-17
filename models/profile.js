@@ -6,6 +6,8 @@ const messagedSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Profile"
   }
+}, {
+  timestamps: true,
 })
 
 const profileSchema = new mongoose.Schema(

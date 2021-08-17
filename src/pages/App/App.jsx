@@ -58,7 +58,7 @@ class App extends Component {
 	}
 
 	render() {
-		const { userProfile } = this.state
+		const { user, userProfile } = this.state
 		return (
 			<>
 				<main>
@@ -85,9 +85,11 @@ class App extends Component {
 				}/>
 				<Route
 					exact path="/profile"
-					render={({location}) =>
+					render={({history, location}) =>
 						authService.getUser() ?
 						<ProfileDetails
+							user={user}
+							history={history}
 							location={location}
 							userProfile={userProfile}
 							handleAddRestaurant={this.handleAddRestaurant}
@@ -133,7 +135,7 @@ class App extends Component {
 					exact path='/messages'
 					render={({location})=>
 					authService.getUser() ?
-					<Messages location = {location}/> : <Redirect to='/login'/>
+					<Messages location = {location} userProfile={userProfile}/> : <Redirect to='/login'/>
 				}/>
 				</main>
 			</>

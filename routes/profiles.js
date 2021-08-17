@@ -14,6 +14,4 @@ const router = Router();
 router.use(decodeUserFromToken)
 router.get('/userProfile', checkAuth, profilesCtrl.userProfile)
 router.get('/', checkAuth, profilesCtrl.index)
-
-// update profile info
 router.put('/userProfile', checkAuth, profilesCtrl.updateProfile)

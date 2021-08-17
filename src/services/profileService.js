@@ -21,8 +21,6 @@ export function getAllProfiles(){
     }).then(res => res.json())
 }
 
-
-
 export function updatedProfile(profile) {
   console.log('going to update the profile', profile);
   return fetch(
