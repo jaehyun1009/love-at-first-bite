@@ -4,6 +4,7 @@ import { Restaurant } from '../models/restaurant.js'
 export {
   index,
   userProfile,
+  updateProfile
 }
 
 function index(req, res){
@@ -25,4 +26,8 @@ function userProfile(req, res){
     console.log(profile)
     res.json(profile)
   })
+}
+
+function updateProfile(req, res){
+  console.log(req.body)
 }
