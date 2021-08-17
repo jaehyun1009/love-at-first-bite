@@ -100,7 +100,7 @@ class SignupForm extends Component {
         <div className={styles.inputBox}>
           <label htmlFor="password" className={styles.label}></label>
           <input
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[!-~]{8,}$"
+            // pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[!-~]{8,}$"
             title="Password must be minimum 8 characters, at least one uppercase letter, one lowercase letter, and one number"
             type="password"
             autoComplete="off"

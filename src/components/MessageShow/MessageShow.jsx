@@ -19,20 +19,21 @@ class MessageShow extends Component {
   }
   handleSubmit= evt => {
     evt.preventDefault()
-    MessageService.newMessage(this.state.otherProfile._id,this.state.formData)
-    .then(message=> {
-      console.log(message)
+    MessageService.newMessage(this.state.otherProfile._id,this.state.formData).then(() => {
+      MessageService.getMessages(this.state.otherProfile._id).then(messages => {
+        this.setState({messages})
+      })
     })
   }
   render() { 
     return (
       <>
-      <h1>{'You: ' + this.props.userProfile?.firstName}</h1>
-      <h1>{'Messaging: ' + this.state.otherProfile.firstName}</h1>
-      {this.state.messages?.map(message=>
+        <h1>{'You: ' + this.props.userProfile?.firstName}</h1>
+        <h1>{'Messaging: ' + this.state.otherProfile.firstName}</h1>
+        {this.state.messages?.map(message=>
       <>
-       <h1>{message.from.firstName + ": "}{message.content}</h1> 
-       <h2>{DateTime.fromISO(message.createdAt).toRelative()}</h2>
+        <h1>{message.from.firstName + ": "}{message.content}</h1> 
+        <h2>{DateTime.fromISO(message.createdAt).toRelative()}</h2>
       </>
       )}
       <form onSubmit={this.handleSubmit}>
