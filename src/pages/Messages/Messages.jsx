@@ -12,13 +12,12 @@ class Messages extends Component {
   render() { 
     return (
       <>
-      <Messaged/>
       {this.state.messageShow &&
       <MessageShow profile=''/> 
 
       }
       {this.props.location.state&&
-      <MessageShow profile = {this.props.location.state}/>
+      <MessageShow profile={this.props.location.state} userProfile={this.props?.userProfile}/>
       }
       </>
     );

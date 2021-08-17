@@ -43,7 +43,7 @@ function create (req, res) {
       // have I messaged this person before return truth or false
       if(loggedInProfile.messaged.some(messagedProfile => {
         return messagedProfile.otherPerson.toString() === beingMessagedProfile._id.toString()})) {
-          // extracting message
+        // extracting message
         const messaged = loggedInProfile.messaged.find(messaged => messaged.otherPerson.toString() === beingMessagedProfile._id.toString())
         // find index of the message
         // who sent the latest message. removing the old message that was displayed and showing the new one
