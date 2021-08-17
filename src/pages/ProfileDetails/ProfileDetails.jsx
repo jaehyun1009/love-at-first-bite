@@ -4,8 +4,9 @@ import SettingsForm from '../../components/SettingsForm/SettingsForm'
 import styles from './ProfileDetails.module.css'
 import FavoriteRestaurants from '../../components/FavoriteRestaurants/FavoriteRestaurants'
 import { Link } from 'react-router-dom'
+import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 
-const ProfileDetails = ({user, history, location, userProfile, handleAddRestaurant, handleRemoveRestaurant}) => {
+const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemoveRestaurant, handleUpdateProfile}) => {
   const {profile} = location.state
   return (
     <>
@@ -15,19 +16,20 @@ const ProfileDetails = ({user, history, location, userProfile, handleAddRestaura
       handleAddRestaurant= {handleAddRestaurant}
       handleRemoveRestaurant= {handleRemoveRestaurant}
     />
+        
+<Link
+  to={{
+    pathname: "/messages",
+    state: profile 
+  }}> Messages </Link>
+<br />
+<br />
 
-    <Link
-      to={{
-        pathname: "/messages",
-        state: profile 
-      }}> Message
-    </Link>
-
-    <SettingsForm 
-      user={user}
-      history={history}
-      userProfile={userProfile}
-    />
+ <ProfileInfo 
+  profile= {profile}
+  userProfile={userProfile}
+  handleUpdateProfile={handleUpdateProfile}
+  />
 
     </>
   )

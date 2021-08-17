@@ -11,7 +11,7 @@ const NavBar = ({ userProfile, handleLogout, history }) => {
 			{userProfile ? (
 				<nav className={styles.menu}>
 						<ol>
-							<li><Link to="/">HOME</Link></li>
+							<li><Link className='' to="/">HOME</Link></li>
 							<li><Link to={{ pathname: "/profile", state: {profile}}} >MY PROFILE</Link></li>
 							<li><Link to="/users">Users</Link></li>
 							<li><Link to='/messages'>messages</Link></li>

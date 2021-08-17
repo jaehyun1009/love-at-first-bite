@@ -23,5 +23,5 @@ class Messages extends Component {
     );
   }
 }
- 
+
 export default Messages;

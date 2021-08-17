@@ -21,14 +21,16 @@ export function getAllProfiles(){
     }).then(res => res.json())
 }
 
-export function updateProfile(profile){
+export function updatedProfile(profile) {
+  console.log('going to update the profile', profile);
   return fetch(
-    `${BASE_URL}updateProfile`,
+    `${BASE_URL}userProfile`, 
     {
-      method: 'PATCH',
-      headers: { Authorization: "Bearer " + tokenService.getToken() },
-      body: JSON.stringify(profile)
-    },{
-      mode: 'cors'
-    }).then(res => res.json())
+    method: 'PUT', 
+    body: JSON.stringify(profile),
+    headers: { 'Content-Type': 'application/json', Authorization: "Bearer " + tokenService.getToken()},
+  },
+  { mode: "cors"}
+  )
+  .then(res => res.json())
 }
