@@ -3,6 +3,8 @@ import * as restaurantAPI from '../../services/restaurantService'
 import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import { Link } from 'react-router-dom'
+import styles from './RestaurantDetails.module.css'
+
 
 class RestaurantDetails extends Component{
   state = {
@@ -17,12 +19,12 @@ class RestaurantDetails extends Component{
   render(){
     const {searchResult} = this.state
     return (
-      <>
+      <div className={styles.box} >
         {
           (searchResult._id) ? 
           <>
             <h1>{searchResult?.name}</h1>
-            <img src={searchResult?.img_url} width='500px' alt='business'/>
+            <img src={searchResult?.img_url} width='300px' alt='business'/>
             <br />
             <h3><a href={searchResult?.url}>Yelp link to business</a></h3>
             <h3>Phone Number: {searchResult?.phone}</h3>
@@ -66,7 +68,7 @@ class RestaurantDetails extends Component{
             />
           </>
         }
-      </>
+      </div>
     )
   }
 }
