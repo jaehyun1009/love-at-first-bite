@@ -1,11 +1,15 @@
-# Love at First Bite# Love at First Bite
+# Love at First Bite
+## Created By
+Betsy Beam found at https://www.linkedin.com/in/betsy-beam/
+John Ho found at https://www.linkedin.com/in/jaehyun1009/
+Henwin Cuffy found at https://www.linkedin.com/in/henwin-cuffy/
 ## Trello Board 
 https://trello.com/b/Jo9b4eZQ/love-at-first-bite
 
- Love at First Bite
+## About Love at First Bite
 Whether your looking for love or just looking for new people to hang out it we are here for you! This app was built to bring people back together after the year we had in 2020. This app uses the Yelp API to find your favorite places to hangout. Users can then add them to their profile and connect with other individuals that have added that place to their favorites list.
 
-instructions
+## instructions
 
 1. Login in 
 2. Find your favorite spots to eat!
@@ -13,10 +17,10 @@ instructions
 4. Message other people that haved like the same places.
 5. Go have a great time!!
 
-Web App Screenshot
+## Web App Screenshot
 
 
-Technologies Implemented
+## Technologies Implemented
 
 1. HTML
 2. CSS
@@ -29,10 +33,17 @@ Technologies Implemented
 9. Mongoose
 10. Heroku
 
-Credits/ShoutOuts
+## Credits/ShoutOuts
 
 1. TA Squad 
 2. Blake Romano found at https://www.linkedin.com/in/blakeromano/
 3. CSS By 
 
-Future Plans
+## Future Plans
+1. 
+2. 
+
+## Lessons Learned
+1. 
+2. 
+3. 

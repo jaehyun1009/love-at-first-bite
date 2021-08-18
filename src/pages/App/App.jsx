@@ -61,8 +61,10 @@ class App extends Component {
 		const { user, userProfile } = this.state
 		return (
 			<>
-				<main>
 				<NavBar userProfile={userProfile} history={this.props.history} handleLogout={this.handleLogout} />
+
+				<main>
+				{/* <NavBar userProfile={userProfile} history={this.props.history} handleLogout={this.handleLogout} /> */}
 				<Route 
 					exact path="/"
 					render={({ history }) => 
