@@ -17,19 +17,23 @@ const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemov
       handleRemoveRestaurant= {handleRemoveRestaurant}
     />
         
-<Link
-  to={{
-    pathname: "/messages",
-    state: profile 
-  }}> Messages </Link>
-<br />
-<br />
+    {
+      profile?._id !== userProfile?._id && 
+      <Link
+        to={{
+          pathname: "/messages",
+          state: profile 
+        }}> Messages
+      </Link>
+    }
 
- <ProfileInfo 
-  profile= {profile}
-  userProfile={userProfile}
-  handleUpdateProfile={handleUpdateProfile}
-  />
+    <br />
+    <br />
+    <ProfileInfo 
+      profile= {profile}
+      userProfile={userProfile}
+      handleUpdateProfile={handleUpdateProfile}
+      />
 
     </>
   )

@@ -10,9 +10,13 @@ export {
 function messaged(req,res){
   Profile.findById(req.user.profile)
   .populate({
-    path: "messaged",
+    path: 'messaged',
     populate: {
-      path: 'otherPerson'
+      path: 'otherPerson',
+      populate: {
+        path: 'restaurants',
+        model: 'Restaurant'
+      }
     }
   })
   //.sort({messaged: {updatedAt: -1}})
@@ -36,7 +40,6 @@ function create (req, res) {
   // find whos logged in
   Profile.findById(req.user.profile)
   .then(loggedInProfile => {
-
     Profile.findById(req.params.id)
     // whos being messaged
     .then(beingMessagedProfile => {
@@ -47,7 +50,7 @@ function create (req, res) {
         const messaged = loggedInProfile.messaged.find(messaged => messaged.otherPerson.toString() === beingMessagedProfile._id.toString())
         // find index of the message
         // who sent the latest message. removing the old message that was displayed and showing the new one
-        const idx = loggedInProfile.messaged.findIndex(mesaged => messaged.otherPerson === beingMessagedProfile._id.toString())
+        const idx = loggedInProfile.messaged.findIndex(messaged => messaged.otherPerson === beingMessagedProfile._id.toString())
         messaged.newestMessage = req.body.content
         loggedInProfile.messaged.splice(idx, 1, messaged)
         loggedInProfile.save()
