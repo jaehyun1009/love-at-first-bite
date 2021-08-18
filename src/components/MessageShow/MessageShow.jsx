@@ -33,11 +33,11 @@ class MessageShow extends Component {
         <h1>{'You: ' + this.props.userProfile?.firstName}</h1>
         <h1>{'Messaging: ' + this.state.otherProfile.firstName}</h1>
         {this.state.messages?.map(message=>
-      <>
-        <h1>{message.from.firstName + ": "}{message.content}</h1> 
-        <h2>{DateTime.fromISO(message.createdAt).toRelative()}</h2>
-      </>
-      )}
+          <React.Fragment key={message._id}>
+            <h1>{message.from.firstName + ": "}{message.content}</h1> 
+            <h2>{DateTime.fromISO(message.createdAt).toRelative()}</h2>
+          </React.Fragment>
+        )}
       <form onSubmit={this.handleSubmit}>
       <textarea name="content" id="content" cols="30" rows="10" onChange={this.handleChange}>{this.state.content}</textarea>
       <button>send</button>  
