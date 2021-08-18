@@ -45,7 +45,7 @@ class SignupForm extends Component {
     const age = Math.floor(DateTime.local().diff(DateTime.fromISO(birthday), 'years').years)
     if (isNaN(age) || age < 18 || age > 99)
       return true
-    return !(firstName && email && birthday && gender && password && password === passwordConf)
+    return !(firstName && email && birthday  && password && password === passwordConf)
   }
 
   render() {
@@ -140,7 +140,7 @@ class SignupForm extends Component {
         </div>
         <br />
         
-        <div >
+        {/* <div >
           <label htmlFor="gender" className={styles.label}>Gender</label>
           <br />
           <br />
@@ -168,7 +168,7 @@ class SignupForm extends Component {
             onClick={this.handleClick}
           />
           <label htmlFor="Other">Other</label>
-        </div>
+        </div> */}
 
         <button disabled={this.isFormInvalid()} className={styles.searchButton}>Sign Up</button>
       </form>

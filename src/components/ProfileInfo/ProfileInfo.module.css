@@ -55,7 +55,7 @@ textarea {
 
 
 .inputBox {
-  padding-right: 13px;
+  padding-right: 14px;
 
 }
 
@@ -105,13 +105,13 @@ textarea {
 .searchButton {
   background-color: transparent;
     border-radius: 12px;
-    border: 2px solid white;
+    border: 1.5px solid white;
     box-sizing: border-box;
     color: #eee;
     cursor: pointer;
-    font-size: 13px;
-    height: 25px;
-    margin-top: 3px;
+    font-size: 15px;
+    height: 28px;
+    margin-top: 10px;
     text-align: center;
     width: 100%;
 }

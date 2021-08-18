@@ -36,7 +36,7 @@ handleChange = e => {
         <h3 className={styles.header}>PROFILE DETAILS</h3>
       <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
         <div className={styles.inputBox}>
-          <label htmlFor="firstName" className={styles.label}>First Name:</label>
+          <label htmlFor="firstName" className={styles.label}>FIRST NAME:</label>
           <br />
           <input
             type="text"
@@ -48,7 +48,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="lastName" className={styles.label}>Last Name:
+          <label htmlFor="lastName" className={styles.label}>LAST NAME:
           </label>
           <br />
           <input
@@ -61,7 +61,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="email" className={styles.label}>Email:</label>
+          <label htmlFor="email" className={styles.label}>EMAIL:</label>
           <br />
           <input
             type="email"
@@ -73,7 +73,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="profilePic" className={styles.label}>Profile Pic URL:</label>
+          <label htmlFor="profilePic" className={styles.label}>PROFILE URL:</label>
           <br />
           <input
             type="profilePic"
@@ -85,7 +85,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="location" className={styles.label}>Location:</label>
+          <label htmlFor="location" className={styles.label}>LOCATION:</label>
           <br />
           <input
             type="location"
@@ -97,7 +97,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="userGender" className={styles.label}>Gender:</label>
+          <label htmlFor="userGender" className={styles.label}>GENDER:</label>
           <br />
           <input
             type="userGender"
@@ -109,7 +109,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="sexualOrientation" className={styles.label}>Sexual Orientation:</label>
+          <label htmlFor="sexualOrientation" className={styles.label}>SEXUAL ORIENTATION:</label>
           <br />
           <input
             type="sexualOrientation"
@@ -121,7 +121,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="searchingFor" className={styles.label}>Searching For</label>
+          <label htmlFor="searchingFor" className={styles.label}>WANTING:</label>
           <br className={styles.lineBreak} />
           <select 
             name="searchingFor" 
@@ -130,15 +130,15 @@ handleChange = e => {
             value={this.state.searchingFor}
             onChange={this.handleChange}
             >
-              <option value=""></option>
+              {/* <option value=""></option> */}              
+              <option value="Both">Both</option>
               <option value="Love">Love</option>
               <option value="Friendship">Friendship</option>
-              <option value="Both">Both</option>
           </select>
         </div>
 
         <div className={styles.inputBox}>
-          <label htmlFor="aboutMe" className={styles.label}>About Me</label>
+          <label htmlFor="aboutMe" className={styles.label}>ABOUT ME:</label>
           <br className={styles.lineBreak} />
           <textarea
             type="aboutMe"
@@ -151,7 +151,6 @@ handleChange = e => {
           />
         </div>
         <button className={styles.searchButton} type="submit">UPDATE</button>
-
       </form>
       </div>
       </>
