@@ -10,7 +10,7 @@ class ProfileInfo extends Component {
     profilePic: this.props?.profile?.profilePic,
     location: this.props?.profile?.location,
     aboutMe: this.props?.profile?.aboutMe,
-    userGender: this.props?.profile?.userGender,
+    gender: this.props?.profile?.gender,
     sexualOrientation: this.props?.profile?.sexualOrientation,
     searchingFor: this.props?.profile?.searchingFor,
 }
@@ -97,14 +97,14 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="userGender" className={styles.label}>GENDER:</label>
+          <label htmlFor="gender" className={styles.label}>Gender:</label>
           <br />
           <input
-            type="userGender"
+            type="gender"
             autoComplete="off"
-            id="userGender"
-            value={this.state.userGender}
-            name="userGender"
+            id="gender"
+            value={this.state.gender}
+            name="gender"
             onChange={this.handleChange}
           />
         </div>
