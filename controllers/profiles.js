@@ -23,16 +23,13 @@ function userProfile(req, res){
       model: 'Profile'
     }
   }).then(profile => {
-    console.log(profile)
     res.json(profile)
   })
 }
 
 function updateProfile(req, res){
   Profile.findByIdAndUpdate(req.user.profile, req.body, {new: true})
-
   .then(profile => {
-    console.log(profile);
     res.json(profile)
   })
 }

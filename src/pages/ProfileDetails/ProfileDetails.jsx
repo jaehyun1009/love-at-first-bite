@@ -10,28 +10,29 @@ const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, ha
   const {profile} = location.state
   return (
     <>
-    <FavoriteRestaurants 
-      profile= {profile}
-      userProfile= {userProfile}
-      handleAddRestaurant= {handleAddRestaurant}
-      handleRemoveRestaurant= {handleRemoveRestaurant}
-    />
-        
-<Link
-  to={{
-    pathname: "/messages",
-    state: profile 
-  }}> Messages </Link>
-<br />
-<br />
+      <FavoriteRestaurants 
+        profile= {profile}
+        userProfile= {userProfile}
+        handleAddRestaurant= {handleAddRestaurant}
+        handleRemoveRestaurant= {handleRemoveRestaurant}
+      />
 
- <ProfileInfo 
-  profile= {profile}
-  history= {history}
-  userProfile={userProfile}
-  handleUpdateProfile={handleUpdateProfile}
-  />
+      {
+        profile?._id !== userProfile?._id && 
+        <Link
+          to={{
+            pathname: "/messages",
+            state: profile 
+          }}> Messages
+        </Link>
+      }
 
+      <ProfileInfo 
+        profile= {profile}
+        history= {history}
+        userProfile={userProfile}
+        handleUpdateProfile={handleUpdateProfile}
+      />
     </>
   )
 }
