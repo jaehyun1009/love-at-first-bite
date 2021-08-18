@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import styles from './ProfileInfo.module.css'
-import { Link } from 'react-router-dom'
-import * as authService from '../../services/authService'
 
 
 class ProfileInfo extends Component {
@@ -25,13 +23,11 @@ handleSubmit = e => {
   this.props.history.push('/')
 };
 
-
 handleChange = e => {
   this.setState({
     [e.target.name]: e.target.value
   })
 }
-
 
   render() {
     return (
