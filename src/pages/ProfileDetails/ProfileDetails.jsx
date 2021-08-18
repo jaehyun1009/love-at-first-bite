@@ -16,7 +16,6 @@ const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, ha
         handleAddRestaurant= {handleAddRestaurant}
         handleRemoveRestaurant= {handleRemoveRestaurant}
       />
-
       {
         profile?._id !== userProfile?._id && 
         <Link
@@ -26,13 +25,15 @@ const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, ha
           }}> Messages
         </Link>
       }
-
-      <ProfileInfo 
-        profile= {profile}
-        history= {history}
-        userProfile={userProfile}
-        handleUpdateProfile={handleUpdateProfile}
-      />
+      {
+        profile._id === userProfile._id && 
+        <ProfileInfo 
+          profile= {profile}
+          history= {history}
+          userProfile={userProfile}
+          handleUpdateProfile={handleUpdateProfile}
+        />
+      }
     </>
   )
 }
