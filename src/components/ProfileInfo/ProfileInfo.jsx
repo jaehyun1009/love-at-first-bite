@@ -33,10 +33,11 @@ handleChange = e => {
     return (
       <>
       <div className={styles.box}>
-        <h3>PROFILE DETAILS</h3>
+        <h3 className={styles.header}>PROFILE DETAILS</h3>
       <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
         <div className={styles.inputBox}>
-          <label htmlFor="firstName" className={styles.label}>First Name</label>
+          <label htmlFor="firstName" className={styles.label}>First Name:</label>
+          <br />
           <input
             type="text"
             autoComplete="off"
@@ -47,8 +48,9 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="lastName" className={styles.label}>Last Name
+          <label htmlFor="lastName" className={styles.label}>Last Name:
           </label>
+          <br />
           <input
             type="text"
             autoComplete="off"
@@ -59,7 +61,8 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="email" className={styles.label}>Email</label>
+          <label htmlFor="email" className={styles.label}>Email:</label>
+          <br />
           <input
             type="email"
             autoComplete="off"
@@ -70,7 +73,8 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="profilePic" className={styles.label}>Profile Pic URL</label>
+          <label htmlFor="profilePic" className={styles.label}>Profile Pic URL:</label>
+          <br />
           <input
             type="profilePic"
             autoComplete="off"
@@ -81,7 +85,8 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="location" className={styles.label}>Location</label>
+          <label htmlFor="location" className={styles.label}>Location:</label>
+          <br />
           <input
             type="location"
             autoComplete="off"
@@ -92,18 +97,8 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="aboutMe" className={styles.label}>About Me</label>
-          <input
-            type="aboutMe"
-            autoComplete="off"
-            id="aboutMe"
-            value={this.state.aboutMe}
-            name="aboutMe"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className={styles.inputBox}>
-          <label htmlFor="gender" className={styles.label}>Gender</label>
+          <label htmlFor="gender" className={styles.label}>Gender:</label>
+          <br />
           <input
             type="gender"
             autoComplete="off"
@@ -113,9 +108,9 @@ handleChange = e => {
             onChange={this.handleChange}
           />
         </div>
-
         <div className={styles.inputBox}>
-          <label htmlFor="sexualOrientation" className={styles.label}>Sexual Orientation</label>
+          <label htmlFor="sexualOrientation" className={styles.label}>Sexual Orientation:</label>
+          <br />
           <input
             type="sexualOrientation"
             autoComplete="off"
@@ -127,6 +122,7 @@ handleChange = e => {
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="searchingFor" className={styles.label}>Searching For</label>
+          <br className={styles.lineBreak} />
           <select 
             name="searchingFor" 
             type="searchingFor"
@@ -141,8 +137,20 @@ handleChange = e => {
           </select>
         </div>
 
-
-        <button type="submit">UPDATE</button>
+        <div className={styles.inputBox}>
+          <label htmlFor="aboutMe" className={styles.label}>About Me</label>
+          <br className={styles.lineBreak} />
+          <textarea
+            type="aboutMe"
+            autoComplete="off"
+            id="aboutMe"
+            value={this.state.aboutMe}
+            name="aboutMe"
+            onChange={this.handleChange}
+            className={styles.submissionField}
+          />
+        </div>
+        <button className={styles.searchButton} type="submit">UPDATE</button>
 
       </form>
       </div>
