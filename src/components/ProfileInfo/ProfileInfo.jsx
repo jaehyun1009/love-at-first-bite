@@ -147,7 +147,7 @@ handleChange = e => {
         </div>
 
 
-        <button type="submit">Update</button>
+        <button type="submit">UPDATE</button>
 
 
       </form>
