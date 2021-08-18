@@ -19,7 +19,7 @@ class MessageShow extends Component {
     return (
       <div hidden={!this.props.messageShow}>
         <h1>{'You: ' + this.props.userProfile?.firstName}</h1>
-        <h1>{'Messaging: ' + this.props.otherProfile?.firstName}</h1>
+        <h1>{'Messaging: ' + this.props.otherProfile ?.firstName}</h1>
         {this.props.messages?.map(message=>
       <>
         <h1>{message.from.firstName + ": "}{message.content}</h1> 
