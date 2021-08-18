@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+* {
+  font-family: 'Oxygen', sans-serif;;
+}
+
 body {
   background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%)
 }

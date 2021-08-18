@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+* {
+  font-family: 'Oxygen', sans-serif;
+}
+
 .box {
 	position: absolute;
 	top: 50%;
