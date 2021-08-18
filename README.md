@@ -1,4 +1,8 @@
 # Love at First Bite
+## Created By
+Betsy Beam found at https://www.linkedin.com/in/betsy-beam/
+John Ho found at https://www.linkedin.com/in/jaehyun1009/
+Henwin Cuffy found at https://www.linkedin.com/in/henwin-cuffy/
 ## Trello Board 
 https://trello.com/b/Jo9b4eZQ/love-at-first-bite
 
@@ -36,3 +40,10 @@ Whether your looking for love or just looking for new people to hang out it we a
 3. CSS By 
 
 ## Future Plans
+1. 
+2. 
+
+## Lessons Learned
+1. 
+2. 
+3. 
