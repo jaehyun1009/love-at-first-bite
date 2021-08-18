@@ -1,4 +1,4 @@
-# Love at First Bite# Love at First Bite
+# Love at First Bite
 ## Trello Board 
 https://trello.com/b/Jo9b4eZQ/love-at-first-bite
 
@@ -35,4 +35,4 @@ Whether your looking for love or just looking for new people to hang out it we a
 2. Blake Romano found at https://www.linkedin.com/in/blakeromano/
 3. CSS By 
 
-Future Plans
+## Future Plans
