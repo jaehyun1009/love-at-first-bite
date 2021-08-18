@@ -50,14 +50,14 @@ function create (req, res) {
         const messaged = loggedInProfile.messaged.find(messaged => messaged.otherPerson.toString() === beingMessagedProfile._id.toString())
         // find index of the message
         // who sent the latest message. removing the old message that was displayed and showing the new one
-        const idx = loggedInProfile.messaged.findIndex(messaged => messaged.otherPerson === beingMessagedProfile._id.toString())
+        const idx = loggedInProfile.messaged.indexOf(messaged)
         messaged.newestMessage = req.body.content
         loggedInProfile.messaged.splice(idx, 1, messaged)
         loggedInProfile.save()
         // Same as above but for the other user. Matching the newest messages
         .then(loggedInProfile => {
-          const messaged = beingMessagedProfile.messaged.find(messaged => messaged.otherPerson.toString() === loggedInProfile._id.toString())
-          const idx = beingMessagedProfile.messaged.findIndex(messaged => messaged.otherPerson.toString() === loggedInProfile._id.toString())
+          const messaged = beingMessagedProfile.messaged.find(messaged => messaged?.otherPerson?.toString() === loggedInProfile._id.toString())
+          const idx = beingMessagedProfile.messaged.indexOf(messaged)
           beingMessagedProfile.messaged.splice(idx, 1, messaged)
           beingMessagedProfile.save()
           .then(beingMessagedProfile => {
