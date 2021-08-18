@@ -42,6 +42,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 50px;
 }
 
 @media (min-width: 45rem) {
@@ -767,7 +768,7 @@ body {
     opacity: 1;
   }
   .menu > ol > li > a {
-    padding: 2rem 0;
+    padding: 10px;
     font-size: 1.6vw;
     position: relative;
     width: 100%;
