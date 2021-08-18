@@ -19,7 +19,7 @@ const profileSchema = new mongoose.Schema(
     birthday: Date,
     location: String,
     aboutMe: String,
-    userGender: String,
+    gender: String,
     sexualOrientation: String,
     searchingFor: [{
       type: String,
@@ -36,11 +36,6 @@ const profileSchema = new mongoose.Schema(
       min: 18,
       max: 99,
       default: 99
-    },
-    gender: {
-      type: String,
-      enum: ['Male', 'Female', 'Other'],
-      default: 'Other'
     },
     lookingFor: [{
       type: String,
