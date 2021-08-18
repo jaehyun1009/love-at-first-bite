@@ -6,35 +6,33 @@ import FavoriteRestaurants from '../../components/FavoriteRestaurants/FavoriteRe
 import { Link } from 'react-router-dom'
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 
-const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemoveRestaurant, handleUpdateProfile}) => {
+const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, handleRemoveRestaurant, handleUpdateProfile}) => {
   const {profile} = location.state
   return (
     <>
-    <FavoriteRestaurants 
-      profile= {profile}
-      userProfile= {userProfile}
-      handleAddRestaurant= {handleAddRestaurant}
-      handleRemoveRestaurant= {handleRemoveRestaurant}
-    />
-        
-    {
-      profile?._id !== userProfile?._id && 
-      <Link
-        to={{
-          pathname: "/messages",
-          state: profile 
-        }}> Messages
-      </Link>
-    }
-
-    <br />
-    <br />
-    <ProfileInfo 
-      profile= {profile}
-      userProfile={userProfile}
-      handleUpdateProfile={handleUpdateProfile}
+      <FavoriteRestaurants 
+        profile= {profile}
+        userProfile= {userProfile}
+        handleAddRestaurant= {handleAddRestaurant}
+        handleRemoveRestaurant= {handleRemoveRestaurant}
       />
 
+      {
+        profile?._id !== userProfile?._id && 
+        <Link
+          to={{
+            pathname: "/messages",
+            state: profile 
+          }}> Messages
+        </Link>
+      }
+
+      <ProfileInfo 
+        profile= {profile}
+        history= {history}
+        userProfile={userProfile}
+        handleUpdateProfile={handleUpdateProfile}
+      />
     </>
   )
 }

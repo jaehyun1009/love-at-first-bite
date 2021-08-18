@@ -11,7 +11,7 @@ const NavBar = ({ userProfile, handleLogout, history }) => {
 			{userProfile ? (
 				<nav className={styles.menu}>
 						<ol>
-							<li>LOGO</li>
+							<li><img src="https://i.imgur.com/1c90ry4.png"/></li>
 							<li><Link to="/">Search</Link></li>
 							<li><Link to={{ pathname: "/profile", state: {profile}}} >MY PROFILE</Link></li>
 							<li><Link to="/users">Users</Link></li>

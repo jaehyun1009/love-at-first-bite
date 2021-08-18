@@ -22,6 +22,7 @@ formRef = React.createRef();
 handleSubmit = e => {
   e.preventDefault();
   this.props.handleUpdateProfile(this.state);
+  this.props.history.push('/')
 };
 
 
@@ -32,9 +33,7 @@ handleChange = e => {
 }
 
 
-
   render() {
-    const { firstName, lastName, email, profilePic, location, aboutMe, userGender, sexualOrientation, searchingFor} = this.state
     return (
       <>
       <div className={styles.box}>
@@ -148,7 +147,6 @@ handleChange = e => {
 
 
         <button type="submit">UPDATE</button>
-
 
       </form>
       </div>
