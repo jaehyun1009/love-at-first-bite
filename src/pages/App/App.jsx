@@ -141,6 +141,11 @@ class App extends Component {
 					<Messages location={location} userProfile={userProfile}/> : <Redirect to='/login'/>
 				}/>
 				</main>
+				<footer class="page-footerfont-smallblue">
+			<div class="footer-copyright text-center py-3">© 2020 Copyright: LAFB LLC
+				<h5>Powered By Yelp</h5>
+			</div>
+		</footer>
 			</>
 		)
 	}
