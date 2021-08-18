@@ -47,7 +47,7 @@ class App extends Component {
 
 	handleUpdateProfile = async profile => {
 		const updatedProfile = await profileAPI.updatedProfile(profile)
-		this.setState({profile: updatedProfile})
+		this.setState({userProfile: updatedProfile})
 	}
 
 	async componentDidMount(){
@@ -95,6 +95,7 @@ class App extends Component {
 							handleAddRestaurant={this.handleAddRestaurant}
 							handleRemoveRestaurant={this.handleRemoveRestaurant}
 							handleUpdateProfile={this.handleUpdateProfile}
+							handleLogout={this.handleLogout}
 							/> :
 						<Redirect to='/login'/>
 				}/>

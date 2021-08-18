@@ -6,7 +6,7 @@ import FavoriteRestaurants from '../../components/FavoriteRestaurants/FavoriteRe
 import { Link } from 'react-router-dom'
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 
-const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemoveRestaurant, handleUpdateProfile}) => {
+const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, handleRemoveRestaurant, handleUpdateProfile}) => {
   const {profile} = location.state
   return (
     <>
@@ -27,6 +27,7 @@ const ProfileDetails = ({location, userProfile, handleAddRestaurant, handleRemov
 
  <ProfileInfo 
   profile= {profile}
+  history= {history}
   userProfile={userProfile}
   handleUpdateProfile={handleUpdateProfile}
   />
