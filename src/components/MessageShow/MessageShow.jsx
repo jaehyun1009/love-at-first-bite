@@ -19,15 +19,15 @@ class MessageShow extends Component {
     return (
       <div hidden={!this.props.messageShow}>
         <h1>{'You: ' + this.props.userProfile?.firstName}</h1>
-        <h1>{'Messaging: ' + this.state.otherProfile?.firstName}</h1>
-        {this.state.messages?.map(message=>
-          <React.Fragment key={message._id}>
-            <h1>{message.from.firstName + ": "}{message.content}</h1> 
-            <h2>{DateTime.fromISO(message.createdAt).toRelative()}</h2>
-          </React.Fragment>
-        )}
-      <form onSubmit={this.handleSubmit}>
-      <textarea name="content" id="content" cols="30" rows="10" onChange={this.handleChange}>{this.state.content}</textarea>
+        <h1>{'Messaging: ' + this.props.otherProfile ?.firstName}</h1>
+        {this.props.messages?.map(message=>
+      <>
+        <h1>{message.from.firstName + ": "}{message.content}</h1> 
+        <h2>{DateTime.fromISO(message.createdAt).toRelative()}</h2>
+      </>
+      )}
+      <form onSubmit={(evt) => this.props.newMessage(evt, this.state.formData)}>
+      <textarea name="content" id="content" cols="30" rows="10" onChange={this.handleChange}>{this.state.formData.content}</textarea>
       <button>send</button>  
       </form>
       </div>
