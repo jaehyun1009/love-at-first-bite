@@ -4,21 +4,17 @@ import ProfileCard from '../ProfileCard/ProfileCard'
 import styles from './Messaged.module.css'
 
 class Messaged extends Component {
-  state = { 
-    messaged: []
-  }
-  async componentDidMount(){
-    // List of messages of everyone I Messaged
-    const messaged = await messageService.getMessaged()
-    this.setState({messaged: messaged})
-  }
   render() { 
     return (
       <>
-      {this.state.messaged?.map((messaged, idx) =>
+      {this.props.messaged?.map((messaged, idx) =>
         <>
-          <h1><ProfileCard key={idx} profile={messaged.otherPerson}/></h1> 
-          <h3>{messaged.newestMessage}</h3>
+        <button onClick={() => this.props.handleMessageShow(messaged.otherPerson)}>
+          <div>
+            <h1><ProfileCard key={idx} profile={messaged.otherPerson}/></h1> 
+            <h3>{messaged.newestMessage}</h3>
+          </div>
+        </button>
         </>
       )}
       </>
