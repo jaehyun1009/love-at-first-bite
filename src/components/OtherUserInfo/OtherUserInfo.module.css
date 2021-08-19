@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+* {
+  font-family: 'Oxygen', sans-serif;
+}
+
+
+.profilePic {
+  max-height: 300px;
+  max-width: 200px;
+}
+
+.header {
+  color: white;
+  text-align: center;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+
+}
+
+
+.box {
+	width: 400px;
+	padding: 25px 25px 0 25px;
+	background: rgba(0,0,0,.3);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 10px;
+  margin-top: 20px;;
+}
+
+.box input[type='submit']:hover {
+	background-color: rgba(3, 169, 244, 0.7);
+}
+
+
+.paragraph {
+    padding: 6px;
+    font-size: 16px;
+    color: white;
+}
+
+
+
+
+@media (max-width: 40em) {
+  .box {
+    float: none;
+    width: auto;
+  }
+}

@@ -25,20 +25,21 @@ class OtherUserInfo extends Component {
   render() {
     return (
       <>
-        <br />
-        <h3>About {this.state.firstName}</h3>
+      <div className={styles.box}>
+        <h3 className={styles.header}>About {this.state.firstName}</h3>
           {
             !this.state.profilePic ?
-            <img src='https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' alt=''/> :
+            <img className={styles.profilePic} src='https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' alt=''/> :
             <img onError={this.defaultImage} src={this.state.profilePic} alt="" />
           }
-          <p>Gender: {this.state.gender}</p>
-          <p>Sexual Orientation: {this.state.sexualOrientation}</p>
-          <p>Searching For: {this.state.searchingFor}</p>
-          <p>Location: {this.state.location} </p>
-          <p>More Info: {this.state.aboutMe}</p>
+          <p className={styles.paragraph} >GENDER: <br /> {this.state.gender}</p>
+          <p className={styles.paragraph} >SEXUAL ORIENTATION: <br /> {this.state.sexualOrientation}</p>
+          <p className={styles.paragraph} >SEARCHING FOR: <br /> {this.state.searchingFor}</p>
+          <p className={styles.paragraph} >LOCATION: <br /> {this.state.location} </p>
+          <p className={styles.paragraph} >MORE INFO: <br /> {this.state.aboutMe}</p>
           <br />
           <br />
+        </div>
       </>
     );
   }
