@@ -1,9 +1,9 @@
-import { User } from "../models/user.js"
+import { User } from '../models/user.js'
 
 export {
-  index,
+  updateUser
 }
 
-function index(req, res) {
-  User.find({}).then((users) => res.json(users))
+function updateUser(req, res){
+  console.log(req.body)
 }

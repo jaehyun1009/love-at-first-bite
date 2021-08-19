@@ -28,6 +28,7 @@ async function signup(req, res) {
   const profile = new Profile(req.body)
   req.body.profile = profile._id
   const user = new User(req.body)
+  console.log(user)
   try {
     await user.save();
     await profile.save();

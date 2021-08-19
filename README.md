@@ -1,69 +1,49 @@
-# MERN Stack with OAuth Template
+# Love at First Bite
+## Created By
+Betsy Beam found at https://www.linkedin.com/in/betsy-beam/
+John Ho found at https://www.linkedin.com/in/jaehyun1009/
+Henwin Cuffy found at https://www.linkedin.com/in/henwin-cuffy/
+## Trello Board 
+https://trello.com/b/Jo9b4eZQ/love-at-first-bite
 
-This is a MERN Stack template that includes JWT Authentication.
+## About Love at First Bite
+Whether your looking for love or just looking for new people to hang out it we are here for you! This app was built to bring people back together after the year we had in 2020. This app uses the Yelp API to find your favorite places to hangout. Users can then add them to their profile and connect with other individuals that have added that place to their favorites list.
 
-Use this to go build things! 🚀
+## instructions
 
-## To Use This Template
+1. Login in 
+2. Find your favorite spots to eat!
+3. Add your spots to your profile
+4. Message other people that haved like the same places.
+5. Go have a great time!!
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+## Web App Screenshot
 
-```bash
-git clone https://github.com/SEI-Remote-WC/mern-jwt-auth-template-no-hooks <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
 
-Once you are in the project directory:
+## Technologies Implemented
 
-```bash
-rm -rf .git
-```
+1. HTML
+2. CSS
+3. JSX Auth
+4. JavaScript
+5. EJS
+6. NodeJS
+7. Bootstrap
+8. MongoDB
+9. Mongoose
+10. Heroku
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+## Credits/ShoutOuts
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+1. TA Squad 
+2. Blake Romano found at https://www.linkedin.com/in/blakeromano/
+3. CSS By 
 
-Re-initialize a git repository:
+## Future Plans
+1. 
+2. 
 
-```bash
-git init
-```
-
-Use the GitHub CLI to create a new project repository on GitHub:
-
-```bash
-gh repo create <name-of-your-app-here>
-```
-
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-Then, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL` and `SECRET` with values that you provide.
-
-Delete this README.md
-
-You're done!
+## Lessons Learned
+1. 
+2. 
+3. 

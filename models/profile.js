@@ -1,18 +1,30 @@
 import mongoose from 'mongoose'
 
-export {
-  Profile
-}
+const messagedSchema = new mongoose.Schema({
+  newestMessage: String,
+  otherPerson: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Profile"
+  }
+}, {
+  timestamps: true,
+})
 
 const profileSchema = new mongoose.Schema(
   {
+    firstName: String,
+    lastName: String,
     email: String,
-    name: String,
     profilePic: String,
-    birthday: {
-      type: Date,
-      default: new Date(2000, 0, 1)
-    },
+    birthday: Date,
+    location: String,
+    aboutMe: String,
+    gender: String,
+    sexualOrientation: String,
+    searchingFor: [{
+      type: String,
+      enum: ['Love', 'Friendship', 'Both'],
+    }],
     minimumAge: {
       type: Number,
       min: 18,
@@ -25,11 +37,6 @@ const profileSchema = new mongoose.Schema(
       max: 99,
       default: 99
     },
-    gender: {
-      type: String,
-      enum: ['Male', 'Female', 'Other'],
-      default: 'Other'
-    },
     lookingFor: [{
       type: String,
       enum: ['Male', 'Female', 'Other'],
@@ -37,10 +44,16 @@ const profileSchema = new mongoose.Schema(
     restaurants: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Restaurant'
-    }]
+    }],
+    messaged: [messagedSchema]
+
   },
   {
     timestamps: true,
 })
 
 const Profile = mongoose.model('Profile', profileSchema)
+
+export {
+  Profile
+}
