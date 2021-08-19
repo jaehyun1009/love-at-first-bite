@@ -3,3 +3,135 @@
 * {
   font-family: 'Oxygen', sans-serif;
 }
+
+
+.header {
+  color: white;
+  text-align: center;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.timeSent {
+  margin-bottom: 8px;
+  margin-top: 2px;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.897);
+  /* text-align: right; */
+}
+
+.textPerson {
+  color: rgba(36, 34, 34, 0.973);
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+.eachMessage {
+  line-height: 1em;
+}
+
+.textMessage {
+  color: white;
+  font-size: .8em;
+  font-weight: lighter;
+}
+
+.box {
+	width: 400px;
+	padding: 25px;
+	background: rgba(0,0,0,.3);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 10px;
+  font-size: 10px;
+}
+
+.box h2 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: #FFF;
+	text-align: center;
+}
+
+.box .inputBox {
+	position: relative;
+  float: left;
+  margin-right: 35px;
+}
+
+
+
+.box .inputBox input {
+	width: 100%;
+	padding: 5px 0;
+	font-size: 12px;
+	color: #FFF;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	border: none;
+	border-bottom: 1px solid #FFF;
+	outline: none;
+	background: transparent;
+  font-family: 'Oxygen', sans-serif;
+}
+.box .inputBox label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5px 0;
+	font-size: 13px;
+	color: #FFF;
+	pointer-events: none;
+	transition: .5s;
+	animation: LabelOnLoad 1s forwards 0s ease;
+}
+.box input[type='submit'] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #FFF;
+	background: #03A9F4;
+	padding: 5px 0px;
+	cursor: pointer;
+	border-radius: 2px;
+	font-size: 13px;
+}
+
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+.sendButton {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1.5px solid white;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 15px;
+    height: 28px;
+    margin-top: 10px;
+    margin-right: 0%;
+    /* text-align: center; */
+    width: 4em;
+    margin-left: 85%;
+}
+
+.nextMessage {
+  width: 80%;
+  height: 30px;
+  margin-right: 0%;
+  margin-left: 18%;
+  font-size: 15px;
+  font-family: 'Oxygen', sans-serif;
+
+}
+
+
+@media (max-width: 40em) {
+  .box {
+    float: none;
+    width: auto;
+  }
+}

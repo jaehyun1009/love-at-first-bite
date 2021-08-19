@@ -17,19 +17,26 @@ class MessageShow extends Component {
   
   render() { 
     return (
+      
+      
+      <div className={styles.box}>
       <div hidden={!this.props.messageShow}>
-        <h1>{'You: ' + this.props.userProfile?.firstName}</h1>
-        <h1>{'Messaging: ' + this.props.profile?.firstName}</h1>
-        {this.props.messages?.map(message=>
-      <>
-        <h1>{message.from.firstName + ": "}{message.content}</h1> 
-        <h2>{DateTime.fromISO(message.createdAt).toRelative()}</h2>
-      </>
-      )}
+      <h1 className={styles.header}>{this.props.profile?.firstName}</h1>
       <form onSubmit={(evt) => this.props.newMessage(evt, this.state.formData)}>
-      <textarea name="content" id="content" cols="30" rows="10" onChange={this.handleChange}>{this.state.formData.content}</textarea>
-      <button>send</button>  
+      <textarea className={styles.nextMessage} name="content" id="content" cols="30" rows="10" onChange={this.handleChange}>{this.state.formData.content}</textarea>
+      <button className={styles.sendButton} >SEND</button> 
       </form>
+        
+        {this.props.messages?.reverse().map(message=>
+      <>
+        <h1 className={styles.eachMessage}> 
+          <span className={styles.textPerson}>{message.from.firstName + ": "}</span>
+          <span className={styles.textMessage} >{message.content}</span>
+          </h1> 
+        <h3 className={styles.timeSent}>{DateTime.fromISO(message.createdAt).toRelative()}</h3>
+      </> 
+      )}
+      </div>
       </div>
     );
   }
