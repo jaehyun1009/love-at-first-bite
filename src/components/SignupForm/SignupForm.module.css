@@ -9,13 +9,16 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	width: 300px;
+	width: 350px;
 	padding: 30px;
 	background: rgba(0,0,0,.3);
 	box-sizing: border-box;
 	box-shadow: 0 15px 25px rgba(0,0,0,.5);
 	border-radius: 10px;
+	margin-top: 50px;
 }
+
+
 
 .box h2 {
 	margin: 0 0 30px;
@@ -31,7 +34,6 @@
 .box .inputBox input {
 	width: 100%;
 	padding: 10px 0;
-	font-size: 16px;
 	color: #FFF;
 	letter-spacing: 1px;
 	margin-bottom: 30px;
@@ -39,7 +41,33 @@
 	border-bottom: 1px solid #FFF;
 	outline: none;
 	background: transparent;
+
+	width: 100%;
+	padding-top: 5px 0;
+	font-size: 16px;
+	color: #FFF;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	border: none;
+	border-bottom: 1px solid #FFF;
+  font-family: 'Oxygen', sans-serif;
+
+
 }
+
+
+.box .inputBox input {
+
+}
+
+
+
+
+
+
+
+
+
 .box .inputBox label {
 	position: absolute;
 	top: 0;
@@ -87,6 +115,7 @@
   color: white;
 }
 
+
 .searchButton {
   background-color: transparent;
     border-radius: 12px;
@@ -101,7 +130,9 @@
     width: 100%;
 }
 
-
+.birthdayForm {
+	padding-bottom: none;
+}
 
 
 @media (max-width: 40em) {

@@ -121,7 +121,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="searchingFor" className={styles.label}>WANTING:</label>
+          <label htmlFor="searchingFor" className={styles.label}>LOOKING FOR:</label>
           <br className={styles.lineBreak} />
           <select 
             name="searchingFor" 

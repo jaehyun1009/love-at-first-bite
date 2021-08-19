@@ -24,10 +24,9 @@ class MessageShow extends Component {
       <h1 className={styles.header}>{this.props.profile?.firstName}</h1>
       <form onSubmit={(evt) => this.props.newMessage(evt, this.state.formData)}>
       <textarea className={styles.nextMessage} name="content" id="content" cols="30" rows="10" onChange={this.handleChange}>{this.state.formData.content}</textarea>
-      <button className={styles.sendButton} >SEND</button>  
+      <button className={styles.sendButton} >SEND</button> 
       </form>
         
-      
         {this.props.messages?.reverse().map(message=>
       <>
         <h1 className={styles.eachMessage}> 
@@ -35,9 +34,6 @@ class MessageShow extends Component {
           <span className={styles.textMessage} >{message.content}</span>
           </h1> 
         <h3 className={styles.timeSent}>{DateTime.fromISO(message.createdAt).toRelative()}</h3>
-
-
-
       </> 
       )}
       </div>
