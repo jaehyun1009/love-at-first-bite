@@ -41,7 +41,7 @@ class SignupForm extends Component {
   }
 
   isFormInvalid() {
-    const { firstName, email, password, passwordConf, birthday, gender } = this.state
+    const { firstName, email, password, passwordConf, birthday, gender} = this.state
     const age = Math.floor(DateTime.local().diff(DateTime.fromISO(birthday), 'years').years)
     if (isNaN(age) || age < 18 || age > 99)
       return true
@@ -49,7 +49,7 @@ class SignupForm extends Component {
   }
 
   render() {
-    const { firstName, lastName, email, password, passwordConf, birthday, gender } = this.state
+    const { firstName, lastName, email, password, passwordConf, birthday, gender, location, sexualOrientation, searchingFor } = this.state
     return (
       <>
       <div className={styles.box}>
@@ -124,7 +124,7 @@ class SignupForm extends Component {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="birthday" className={styles.label}>Birthday</label>
+          <label htmlFor="birthday" className={styles.label} >Birthday</label>
           <br /><br />
           <input
             type="date"
@@ -133,6 +133,7 @@ class SignupForm extends Component {
             value={birthday}
             name="birthday"
             onChange={this.handleChange}
+            className={styles.birthdayForm}
           />
         </div>
         <div className={styles.inputBox}>
@@ -146,12 +147,53 @@ class SignupForm extends Component {
             <option value="Other">Other</option>
           </select>
         </div>
+        <br />
         <div className={styles.inputBox}>
-          <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
+          <label htmlFor="sexualOrientation" className={styles.label}>
+          </label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="sexualOrientation"
+            value={sexualOrientation}
+            name="sexualOrientation"
+            onChange={this.handleChange}
+            placeholder='Sexual Orientation'
+          />
+        </div>
+
+        <div className={styles.inputBox}>
+          <label htmlFor="searchingFor" className={styles.label}>Looking For:</label>
+          <br />
+          <br />
+          <select name="gender" id="gender" value={gender} onChange={this.handleChange}>
+            <option value="" selected disabled hidden></option>
+            <option value="Love">Love</option>
+            <option value="Friendship">Friendship</option>
+            <option value="Both">Both</option>
+          </select>
+        </div>
+<br />
+        <div className={styles.inputBox}>
+          <label htmlFor="location" className={styles.label}>
+          </label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="location"
+            value={location}
+            name="location"
+            onChange={this.handleChange}
+            placeholder='Location'
+          />
         </div>
         <br />
         <button disabled={this.isFormInvalid()} className={styles.searchButton}>Sign Up</button>
       </form>
+      <br />
+      <div className={styles.inputBox}>
+          <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
+        </div>
       <br />
       <Link to='/login'> Already a member? Login here. </Link>
       </div>
