@@ -32,7 +32,7 @@ class RestaurantSearch extends Component {
   render(){
     return (
       <>
-        <h1>Search Results</h1>
+        <h1 className={styles.header} >Search Results</h1>
         <div className={styles.main}>
           <ul className={styles.cards}>
         {this.state.searchResults?.map(restaurant => 

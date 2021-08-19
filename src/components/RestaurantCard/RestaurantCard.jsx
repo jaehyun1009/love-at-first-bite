@@ -7,7 +7,7 @@ const RestaurantCard = ({restaurant, userProfile, handleAddRestaurant, handleRem
     <>
     <li className={styles.cards_item}>
       <div className={styles.card}>
-        <div className={styles.card_image}><img src={restaurant.image_url} width='300px' alt='business'/></div>
+        {/* <div className={styles.card_image}><img src={restaurant.image_url} width='300px' alt='business'/></div> */}
         <div className={styles.card_content}>
           <a href={`/restaurants/${restaurant.id}`}><h2 className={styles.card_title}>{restaurant.name}</h2></a>
           <p className={styles.card_text}>{restaurant.location.display_address?.join(', ')}</p>
