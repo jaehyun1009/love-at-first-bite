@@ -48,7 +48,7 @@ class Messages extends Component {
         messageShow: true,
         profile: this.props.location.state,
       })
-      const messages = await messageService.getMessages(this.props.location._id)
+      const messages = await messageService.getMessages(this.props.location.state._id)
       this.setState({messages})
     } else {
       
@@ -66,7 +66,7 @@ class Messages extends Component {
         :
         <>
           <Messaged handleMessageShow={this.handleMessageShow} messaged={this.state.messaged} /> 
-          <MessageShow newMessage={this.newMessage} messages={this.state.messages} wasThereLocation={this.state.wasThereLocation} messageShow={this.state.messageShow} profile={this.props.profile} userProfile={this.props?.userProfile}/>
+          <MessageShow newMessage={this.newMessage} messages={this.state.messages} wasThereLocation={this.state.wasThereLocation} messageShow={this.state.messageShow} profile={this.state.profile} userProfile={this.props?.userProfile}/>
         </>
       }
       </>

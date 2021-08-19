@@ -6,7 +6,7 @@ import styles from './FavoriteRestaurants.module.css'
 const FavoriteRestaurants = ({profile, userProfile, handleAddRestaurant, handleRemoveRestaurant}) => {
   return (
     <>
-    <section>
+      <div className={styles.box}>
       <h3>FAVORITE RESTAURANTS</h3>
       <table>
         <tbody>
@@ -39,7 +39,7 @@ const FavoriteRestaurants = ({profile, userProfile, handleAddRestaurant, handleR
       </tr>
         </tbody>
       </table>
-      </section>
+      </div>
     </>
   )
 }
