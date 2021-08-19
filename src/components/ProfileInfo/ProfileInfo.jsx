@@ -73,7 +73,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="profilePic" className={styles.label}>PROFILE URL:</label>
+          <label htmlFor="profilePic" className={styles.label}>PICTURE URL:</label>
           <br />
           <input
             type="profilePic"
@@ -97,7 +97,7 @@ handleChange = e => {
           />
         </div>
         <div className={styles.inputBox}>
-          <label htmlFor="gender" className={styles.label}>Gender:</label>
+          <label htmlFor="gender" className={styles.label}>GENDER:</label>
           <br />
           <input
             type="gender"
