@@ -52,23 +52,7 @@
 	transition: .5s;
 	animation: LabelOnLoad 1s forwards 0s ease;
 }
-/* @keyframes LabelOnLoad{
-    0%{
-        transform: rotate(0) translateY(-19px);
-        opacity: 0;
-        }
-    100%{
-        transform: rotate(0) translateY(0);
-        opacity: 1;
-        }
-} */
-/* .box .inputBox input:focus ~ label, 
-.box .inputBox input:valid ~ label {
-	top: -19px;
-	left:0;
-	color: #03A9F4;
-	font-size: 12px;
-} */
+
 .box input[type='submit'] {
 	background: transparent;
 	border: none;
@@ -102,7 +86,6 @@
     width: 100%;
     font-family: 'Oxygen', sans-serif;
 }
-
 
 
 

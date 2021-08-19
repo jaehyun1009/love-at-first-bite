@@ -7,17 +7,37 @@ class Messaged extends Component {
   render() { 
     return (
       <>
+      <div className={styles.box}>
+        <h1 className={styles.header}> Messages</h1>
+
+        
+
       {this.props.messaged?.map((messaged, idx) =>
         <>
-        <button onClick={() => this.props.handleMessageShow(messaged.otherPerson)}>
+        <button className={styles.messageBox} onClick={() => this.props.handleMessageShow(messaged.otherPerson)}>
           <div>
-            <h1><ProfileCard key={idx} profile={messaged.otherPerson}/></h1> 
+            <h1><ProfileCard key={idx} profile={messaged.otherPerson}/> </h1> 
             <h3>{messaged.newestMessage}</h3>
           </div>
         </button>
+
+
+      
         </>
       )}
+      </div>
       </>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     );
   }
 }

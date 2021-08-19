@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as MessageService from '../../services/message'
 import { DateTime } from 'luxon'
 import styles from './MessageShow.module.css'
+import ProfileCard from '../ProfileCard/ProfileCard'
 
 
 class MessageShow extends Component {
@@ -17,11 +18,12 @@ class MessageShow extends Component {
   
   render() { 
     return (
-      
-      
       <div className={styles.box}>
       <div hidden={!this.props.messageShow}>
-      <h1 className={styles.header}>{this.props.profile?.firstName}</h1>
+
+      <h1 className={styles.header}>  <ProfileCard profile={this.props.profile}/>   </h1>
+
+
       <form onSubmit={(evt) => this.props.newMessage(evt, this.state.formData)}>
       <textarea className={styles.nextMessage} name="content" id="content" cols="30" rows="10" onChange={this.handleChange}>{this.state.formData.content}</textarea>
       <button className={styles.sendButton} >SEND</button> 

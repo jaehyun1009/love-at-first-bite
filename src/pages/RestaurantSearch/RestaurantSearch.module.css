@@ -9,6 +9,14 @@ img {
   vertical-align: middle;
 }
 
+.header {
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+}
+
 .btn {
   color: #ffffff;
   padding: 0.8rem;
