@@ -45,7 +45,7 @@ class SignupForm extends Component {
     const age = Math.floor(DateTime.local().diff(DateTime.fromISO(birthday), 'years').years)
     if (isNaN(age) || age < 18 || age > 99)
       return true
-    return !(firstName && email && birthday  && password && password === passwordConf)
+    return !(firstName && email && birthday && gender && password && password === passwordConf)
   }
 
   render() {
@@ -136,40 +136,20 @@ class SignupForm extends Component {
           />
         </div>
         <div className={styles.inputBox}>
-          <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
-        </div>
-        <br />
-        
-        {/* <div >
           <label htmlFor="gender" className={styles.label}>Gender</label>
           <br />
           <br />
-          <input
-            type="radio"
-            id="Male"
-            value={gender}
-            name="gender"
-            onClick={this.handleClick}
-          />
-          <label htmlFor="Male">Male</label>&nbsp;
-          <input
-            type="radio"
-            id="Female"
-            value={gender}
-            name="gender"
-            onClick={this.handleClick}
-          />
-          <label htmlFor="Female">Female</label>&nbsp;
-          <input
-            type="radio"
-            id="Other"
-            value={gender}
-            name="gender"
-            onClick={this.handleClick}
-          />
-          <label htmlFor="Other">Other</label>
-        </div> */}
-
+          <select name="gender" id="gender" value={gender} onChange={this.handleChange}>
+            <option value="" selected disabled hidden></option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div className={styles.inputBox}>
+          <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
+        </div>
+        <br />
         <button disabled={this.isFormInvalid()} className={styles.searchButton}>Sign Up</button>
       </form>
       <br />
