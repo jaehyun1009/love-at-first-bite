@@ -60,6 +60,8 @@ handleChange = e => {
             onChange={this.handleChange}
           />
         </div>
+        {
+          /*
         <div className={styles.inputBox}>
           <label htmlFor="email" className={styles.label}>EMAIL:</label>
           <br />
@@ -72,6 +74,8 @@ handleChange = e => {
             onChange={this.handleChange}
           />
         </div>
+          */
+        }
         <div className={styles.inputBox}>
           <label htmlFor="profilePic" className={styles.label}>PICTURE URL:</label>
           <br />

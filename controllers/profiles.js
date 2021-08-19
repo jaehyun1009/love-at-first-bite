@@ -28,7 +28,13 @@ function userProfile(req, res){
 
 function updateProfile(req, res){
   Profile.findByIdAndUpdate(req.user.profile, req.body, {new: true})
-  .then(profile => {
+  .populate({
+    path: 'restaurants',
+    populate: {
+      path: 'likedBy',
+      model: 'Profile'
+    }
+  }).then(profile => {
     res.json(profile)
   })
 }

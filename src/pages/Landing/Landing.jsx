@@ -5,11 +5,8 @@ import SearchForm from '../../components/SearchForm/SearchForm'
 const Landing = ({userProfile, history}) => {
   return (
     <main className={styles.container}>
-      {/* <h1>
-        hello, {userProfile ? userProfile.firstName : "friend"}
-      </h1>    */}
       <div>
-        <SearchForm history={history} />
+        <SearchForm history={history} userProfile={userProfile} />
       </div>  
     </main>
   )
