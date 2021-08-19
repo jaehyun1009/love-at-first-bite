@@ -4,75 +4,124 @@
   font-family: 'Oxygen', sans-serif;
 }
 
-table { 
-	width: 600px; 
-	border-collapse: collapse; 
-	margin: auto;
-  text-transform: uppercase;
-	}
-
-h3 {
-  margin-left: auto;
-    margin-right: auto;
+select {
+  background: transparent;
+  border: white solid 1px;
+  border-radius: 8px;
+  padding: 4px;
+  color: inherit;
+  font: inherit;
+  color: white;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-/* Zebra striping */
-tr:nth-of-type(odd) { 
-	background: transparent; 
-	}
+.header {
+  color: white;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+textarea {
+  margin-top: 3px;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+}
+
+.box {
+	width: 400px;
+	padding: 25px;
+	background: rgba(0,0,0,.3);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 10px;
+}
+
+.box h2 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: #FFF;
+	text-align: center;
+}
+
+.box .inputBox {
+	position: relative;
+  float: left;
+  margin-right: 35px;
+}
 
 
-td, th { 
-	padding: 10px; 
-	text-align: left; 
-	font-size: 18px;
-	}
+.inputBox {
+  padding-right: 14px;
 
-/* 
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+}
 
-	table { 
-	  	width: 100%; 
-	}
+.box .inputBox input {
+	width: 100%;
+	padding: 5px 0;
+	font-size: 12px;
+	color: #FFF;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	border: none;
+	border-bottom: 1px solid #FFF;
+	outline: none;
+	background: transparent;
+  font-family: 'Oxygen', sans-serif;
+}
+.box .inputBox label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5px 0;
+	font-size: 13px;
+	color: #FFF;
+	pointer-events: none;
+	transition: .5s;
+	animation: LabelOnLoad 1s forwards 0s ease;
+}
+.box input[type='submit'] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #FFF;
+	background: #03A9F4;
+	padding: 5px 0px;
+	cursor: pointer;
+	border-radius: 2px;
+	font-size: 13px;
+}
+.box input[type='submit']:hover {
+	background-color: rgba(3, 169, 244, 0.7);
+}
 
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		position: relative;
-	}
+::-webkit-input-placeholder {
+  color: white;
+}
 
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-		/* Label the data */
-		content: attr(data-column);
+.searchButton {
+  background-color: transparent;
+    border-radius: 12px;
+    border: 1.5px solid white;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 15px;
+    height: 28px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
 
-		color: #000;
-		font-weight: bold;
-	}
 
+
+
+@media (max-width: 40em) {
+  .box {
+    float: none;
+    width: auto;
+  }
 }
