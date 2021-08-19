@@ -1,14 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SearchForm from '../SearchForm/SearchForm'
-import ProfileCard from '../ProfileCard/ProfileCard'
 import styles from './NavBar.module.css'
 
 const NavBar = ({ userProfile, handleLogout, history }) => {
 	const profile = userProfile
 	return (
 		<>
-			{userProfile ? (
+			{userProfile &&
 				<nav className={styles.menu}>
 						<ol>
 							<li><Link to="/">RESTAURANT Search</Link></li>
@@ -19,14 +17,7 @@ const NavBar = ({ userProfile, handleLogout, history }) => {
 							{/* <SearchForm history={history} /> */}
 						</ol>
 				</nav>
-			) : (
-				<nav className={styles.menu}>
-						<ol>
-							<li><Link to="/login">LOG IN</Link></li>
-							<li><Link to="/signup">SIGN UP</Link></li>
-						</ol>
-				</nav>
-			)}
+			}
 		</>
 	)
 }

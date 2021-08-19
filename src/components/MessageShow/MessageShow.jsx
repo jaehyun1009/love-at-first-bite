@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import * as MessageService from '../../services/message'
 import { DateTime } from 'luxon'
 import styles from './MessageShow.module.css'
 

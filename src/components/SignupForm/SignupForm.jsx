@@ -49,7 +49,7 @@ class SignupForm extends Component {
   }
 
   render() {
-    const { firstName, lastName, email, password, passwordConf, birthday, gender, location, sexualOrientation, searchingFor } = this.state
+    const { firstName, lastName, email, password, passwordConf, birthday, gender, location, sexualOrientation } = this.state
     return (
       <>
       <div className={styles.box}>
@@ -192,8 +192,8 @@ class SignupForm extends Component {
       </form>
       <br />
       <div className={styles.inputBox}>
-          <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
-        </div>
+        <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
+      </div>
       <br />
       <Link to='/login'> Already a member? Login here. </Link>
       </div>

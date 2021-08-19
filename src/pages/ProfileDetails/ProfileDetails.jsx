@@ -1,7 +1,4 @@
 import React from 'react';
-import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
-import SettingsForm from '../../components/SettingsForm/SettingsForm'
-import styles from './ProfileDetails.module.css'
 import FavoriteRestaurants from '../../components/FavoriteRestaurants/FavoriteRestaurants'
 import { Link } from 'react-router-dom'
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'

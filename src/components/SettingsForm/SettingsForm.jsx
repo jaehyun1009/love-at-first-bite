@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { DateTime, Settings } from 'luxon'
+import { DateTime } from 'luxon'
 
 class SettingsForm extends Component{
   state = {
@@ -88,7 +88,7 @@ class SettingsForm extends Component{
   }
 
   render(){
-    const { changeEmail, changeEmailConf, profilePic, birthday, minimumAge, maximumAge, gender, lookingFor } = this.state
+    const { changeEmail, changeEmailConf, profilePic, birthday, minimumAge, maximumAge, gender } = this.state
     return (
       <>
         <form
