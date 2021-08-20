@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Messaged from '../../components/Messaged/Messaged';
 import MessageShow from '../../components/MessageShow/MessageShow';
 import * as messageService from '../../services/message'
+import styles from './Messages.module.css'
+
 
 class Messages extends Component {
   state = {
@@ -60,13 +62,19 @@ class Messages extends Component {
       {
         !this.props.location.state ? 
         <>
+        <main className={styles.mainPage}>
         <Messaged messaged={this.state.messaged} handleMessageShow={this.handleMessageShow} />
         <MessageShow newMessage={this.newMessage} messageShow={this.state.messageShow} profile={this.state.profile} userProfile={this.props?.userProfile} messages={this.state.messages}/>
+        </main>
         </>
         :
         <>
+                <main className={styles.mainPage}>
+
           <Messaged handleMessageShow={this.handleMessageShow} messaged={this.state.messaged} /> 
           <MessageShow newMessage={this.newMessage} messages={this.state.messages} wasThereLocation={this.state.wasThereLocation} messageShow={this.state.messageShow} profile={this.state.profile} userProfile={this.props?.userProfile}/>
+          </main>
+
         </>
       }
       </>
