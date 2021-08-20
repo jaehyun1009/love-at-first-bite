@@ -46,6 +46,7 @@ class RestaurantDetails extends Component{
                 </div>
               </>
             }
+             <div className={styles.btn}>
            <RestaurantForm
               key={searchResult?.id}
               restaurant={searchResult}
@@ -54,6 +55,7 @@ class RestaurantDetails extends Component{
               handleRemoveRestaurant={this.props.handleRemoveRestaurant}
               className={styles.restaurantButton}
             /> 
+            </div>
           </> : <>
             <h1 className={styles.header}>{searchResult?.name}</h1>
             <img className={styles.picture}  src={searchResult?.image_url} width='500px' alt='business'/>
@@ -63,14 +65,16 @@ class RestaurantDetails extends Component{
             <h3 className={styles.info}>Rating: {searchResult?.rating} ({searchResult?.review_count} Reviews)  &emsp;&emsp; Price Rating: {searchResult?.price} </h3>
             <h3 className={styles.info}>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
             <h3 className={styles.info}><a href={searchResult?.url}>Yelp link to business</a></h3>
+            <div className={styles.btn}>
             <RestaurantForm
               key={searchResult?.id}
               restaurant={searchResult}
               userProfile={this.props.userProfile}
               handleAddRestaurant={this.props.handleAddRestaurant}
               handleRemoveRestaurant={this.props.handleRemoveRestaurant}
-              className={styles.restaurantButton}
+              className={styles.btn}
             />
+            </div>
           </>
         }
       </div>

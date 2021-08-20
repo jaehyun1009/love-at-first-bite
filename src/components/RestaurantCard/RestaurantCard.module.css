@@ -16,21 +16,23 @@ img {
 }
 
 .restauranForm {
-  float: right;
+  /* float: center;
+  width: 100%; */
 }
 
 .btn {
   color: #ffffff;
-  padding: 0.8rem;
   font-size: 14px;
   text-transform: uppercase;
   border-radius: 4px;
   font-weight: 400;
   display: block;
-  width: 100%;
+  
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
   background: transparent;
+  width: 20%;
+  height: 5%;
 }
 
 .btn:hover {
@@ -67,7 +69,8 @@ img {
   flex-direction: column;
   overflow: hidden;
   flex-basis: 0; 
-  flex-grow: 1
+  flex-grow: 1;
+  border-radius: 10px;
 }
 
 .card_content {
