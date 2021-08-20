@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import styles from './OtherUserInfo.module.css'
 
-
-import { Link } from 'react-router-dom'
-import * as authService from '../../services/authService'
-
-
 class OtherUserInfo extends Component {
   state = {
     firstName: this.props?.profile?.firstName,
