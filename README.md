@@ -19,6 +19,15 @@ Whether you're looking for love or just looking for new people to hang out, we a
 
 ## Web App Screenshot
 
+<img width="343" alt="Screen Shot 2021-08-20 at 10 37 35 AM" src="https://user-images.githubusercontent.com/82171107/130264747-aafbf62b-fca2-4141-984d-e60a195aaa0b.png">
+
+<img width="346" alt="Screen Shot 2021-08-20 at 10 37 12 AM" src="https://user-images.githubusercontent.com/82171107/130264775-2244181b-e460-4d86-80d5-29e249eca570.png">
+
+<img width="1538" alt="Screen Shot 2021-08-20 at 10 35 22 AM" src="https://user-images.githubusercontent.com/82171107/130264963-5b6b0f66-ead7-418f-9d47-e86ab19e5a61.png">
+
+<img width="1700" alt="Screen Shot 2021-08-20 at 10 31 45 AM" src="https://user-images.githubusercontent.com/82171107/130264796-2ccc11c0-3010-4c6a-a41a-93e3ec145994.png">
+
+<img width="881" alt="Screen Shot 2021-08-20 at 10 24 12 AM" src="https://user-images.githubusercontent.com/82171107/130264984-af536621-f19e-4dab-b331-3abc58a3db47.png">
 
 ## Technologies Implemented
 
@@ -36,7 +45,7 @@ Whether you're looking for love or just looking for new people to hang out, we a
 
 1. TA Squad 
 2. Blake Romano found at https://www.linkedin.com/in/blakeromano/
-3. NavBar CSS By https://codepen.io/onediv/pen/oyQdJz
+3. NavBar CSS By https://codepen.io/onediv/pen/oyQdJz GitHub:https://github.com/blakeromano
 
 ## Future Plans
 1. Email Verification
