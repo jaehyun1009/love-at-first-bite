@@ -10,11 +10,29 @@
 	background: rgba(0,0,0,.3);
 	box-shadow: 0 15px 25px rgba(0,0,0,.5);
 	border-radius: 10px;
-
   display: flex;
   flex-direction: column;
+  margin: 10%;
+  margin-top: 5%;
+}
+
+.picture {
+  border-radius: 15%;
+  margin-top: 10px;
+}
+
+.info { 
+  color: white;
+  padding: 3px;
+}
 
 
+.header {
+  color: white;
+  text-align: center;
+  padding-bottom: .3em;
+  text-transform: uppercase;
+  font-size: 2.2em;
 }
 
 .box h2 {
@@ -27,20 +45,10 @@
 
 
 
-/* .searchButton {
-  background-color: transparent;
-    border-radius: 12px;
-    border: 2px solid white;
-    box-sizing: border-box;
-    color: #eee;
-    cursor: pointer;
-    font-size: 18px;
-    height: 50px;
-    margin-top: 3px;
-    text-align: center;
-    width: 100%;
-    font-family: 'Oxygen', sans-serif;
-} */
+.restaurantButton {
+  max-width: 20%;
+  padding: 5px;
+}
 
 
 
