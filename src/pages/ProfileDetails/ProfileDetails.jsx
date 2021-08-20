@@ -1,9 +1,7 @@
 import React from 'react';
 import FavoriteRestaurants from '../../components/FavoriteRestaurants/FavoriteRestaurants'
-import { Link } from 'react-router-dom'
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 import OtherUserInfo from '../../components/OtherUserInfo/OtherUserInfo';
-import MessageLink from '../../components/MessageLink/MessageLink'
 import styles from './ProfileDetails.module.css'
 
 const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, handleRemoveRestaurant, handleUpdateProfile}) => {
@@ -16,7 +14,6 @@ const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, ha
         history= {history}
         userProfile={userProfile}
       />
-
       <FavoriteRestaurants 
         profile= {profile}
         userProfile= {userProfile}

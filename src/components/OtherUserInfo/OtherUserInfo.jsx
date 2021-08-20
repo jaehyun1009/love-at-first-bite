@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import styles from './OtherUserInfo.module.css'
-import { Link } from 'react-router-dom'
 import MessageLink from '../MessageLink/MessageLink'
-
-
-
 
 class OtherUserInfo extends Component {
   state = {
@@ -39,7 +35,9 @@ class OtherUserInfo extends Component {
           <p className={styles.paragraph} >LOCATION: <br /> {this.state.location} </p>
           <p className={styles.paragraph} >ABOUT THEM: <br /> {this.state.aboutMe}</p>
           <br />
-          <p className={styles.messageLink}> <MessageLink profile={this.props.profile} /></p>
+          {this.props.profile._id !== this.props.userProfile._id &&
+            <p className={styles.messageLink}> <MessageLink profile={this.props.profile} /></p>
+          }
           <br />
           <br />
         </div>
