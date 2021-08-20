@@ -37,13 +37,14 @@ Whether your looking for love or just looking for new people to hang out it we a
 
 1. TA Squad 
 2. Blake Romano found at https://www.linkedin.com/in/blakeromano/
-3. CSS By 
+3. NavBar CSS By https://codepen.io/onediv/pen/oyQdJz
 
 ## Future Plans
-1. 
-2. 
+1. Email Verification
+2. Ice Breaker Questions 'Message Prompts'
+3. Ability To Block Other Users
 
 ## Lessons Learned
-1. 
-2. 
-3. 
+1. Betsy: The importance of understanding other peoples code and how to build upon it with my own.
+2. John: The Ability to determin if diffrent code snippits complement each other or if they will cause conflicks. 
+3. Henwin: The importance of knowing your strengths and weakness and how to leverage them.
