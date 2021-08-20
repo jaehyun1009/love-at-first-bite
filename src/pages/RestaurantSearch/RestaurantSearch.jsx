@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import * as restaurantAPI from '../../services/restaurantService'
 import styles from './RestaurantSearch.module.css'
+import Header from '../../components/Header/Header'
+
 
 
 class RestaurantSearch extends Component {
@@ -32,6 +34,7 @@ class RestaurantSearch extends Component {
   render(){
     return (
       <>
+      <Header />
         <h1 className={styles.header} >Search Results</h1>
         <div className={styles.main}>
           <ul className={styles.cards}>
