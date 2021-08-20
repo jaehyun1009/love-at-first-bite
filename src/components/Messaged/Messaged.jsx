@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import * as messageService from '../../services/message'
 import ProfileCard from '../ProfileCard/ProfileCard'
 import styles from './Messaged.module.css'
 
@@ -9,9 +8,6 @@ class Messaged extends Component {
       <>
       <div className={styles.box}>
         <h1 className={styles.header}> Messages</h1>
-
-        
-
       {this.props.messaged?.map((messaged, idx) =>
         <>
         <button className={styles.messageBox} onClick={() => this.props.handleMessageShow(messaged.otherPerson)}>
@@ -20,24 +16,10 @@ class Messaged extends Component {
             <h3>{messaged.newestMessage}</h3>
           </div>
         </button>
-
-
-      
         </>
       )}
       </div>
       </>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     );
   }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './NavBar.module.css'
 
-const NavBar = ({ userProfile, handleLogout, history }) => {
+const NavBar = ({ userProfile, handleLogout }) => {
 	const profile = userProfile
 	return (
 		<>

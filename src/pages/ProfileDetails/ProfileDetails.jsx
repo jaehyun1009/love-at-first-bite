@@ -3,8 +3,8 @@ import FavoriteRestaurants from '../../components/FavoriteRestaurants/FavoriteRe
 import { Link } from 'react-router-dom'
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 import OtherUserInfo from '../../components/OtherUserInfo/OtherUserInfo';
+import MessageLink from '../../components/MessageLink/MessageLink'
 import styles from './ProfileDetails.module.css'
-
 
 const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, handleRemoveRestaurant, handleUpdateProfile}) => {
   const {profile} = location.state
@@ -24,14 +24,9 @@ const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, ha
           history= {history}
           userProfile={userProfile}
           handleUpdateProfile={handleUpdateProfile}
-        /> : <Link
-          to={{
-            pathname: "/messages",
-            state: profile 
-          }}> Messages
-        </Link>
+        /> : 
+        <MessageLink profile={profile}/>
       }
-
       <OtherUserInfo 
         profile= {profile}
         history= {history}

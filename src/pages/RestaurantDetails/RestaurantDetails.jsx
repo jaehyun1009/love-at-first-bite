@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import * as restaurantAPI from '../../services/restaurantService'
 import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
-import { Link } from 'react-router-dom'
 import styles from './RestaurantDetails.module.css'
-
 
 class RestaurantDetails extends Component{
   state = {
