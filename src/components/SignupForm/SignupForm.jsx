@@ -188,12 +188,12 @@ class SignupForm extends Component {
           />
         </div>
         <br />
+        <div className={styles.inputBox}>
+          <p><span style={{color: 'orange'}}>You must be 18 or older to sign up.</span></p>
+        </div>
+        <br />
         <button disabled={this.isFormInvalid()} className={styles.searchButton}>Sign Up</button>
       </form>
-      <br />
-      <div className={styles.inputBox}>
-        <p><span style={{color: 'red'}}>**</span> You must be 18 or older to sign up.</p>
-      </div>
       <br />
       <Link to='/login'> Already a member? Login here. </Link>
       </div>
