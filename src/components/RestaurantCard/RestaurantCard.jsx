@@ -12,8 +12,7 @@ const RestaurantCard = ({restaurant, userProfile, handleAddRestaurant, handleRem
           <a href={`/restaurants/${restaurant.id}`}><h2 className={styles.card_title}>{restaurant.name}</h2></a>
           <p className={styles.card_text}>{restaurant.location.display_address?.join(', ')}</p>
           <p className={styles.card_text}>{restaurant.categories?.map(category => category.title).join(', ')}</p>
-          <p className={styles.card_text}>Rating: {restaurant.rating}</p>
-          <p className={styles.card_text}>Price: {restaurant.price}</p>
+          <p className={styles.card_text}>Rating: {restaurant.rating}  Price: {restaurant.price}</p>
           <RestaurantForm
             restaurant={restaurant}
             userProfile={userProfile}
