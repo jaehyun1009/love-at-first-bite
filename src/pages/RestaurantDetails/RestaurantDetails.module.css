@@ -58,7 +58,20 @@
 }
 
 
-
+.btn {
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  
+  cursor: pointer;
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  background: transparent;
+  width: 20%;
+  height: 5%;
+}
 
 @media (max-width: 40em) {
   .box {
