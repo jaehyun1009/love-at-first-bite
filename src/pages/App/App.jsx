@@ -142,11 +142,7 @@ class App extends Component {
 				}/>
 				</main>
 		    {/* forces Footer to the bottom */}
-        <footer class="page-footerfont-smallblue">
-      <div class="footer-copyright text-center py-3">
-        <h5> </h5>
-      </div>
-    </footer>
+
 			</>
 		)
 	}
