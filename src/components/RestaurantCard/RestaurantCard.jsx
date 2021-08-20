@@ -14,12 +14,16 @@ const RestaurantCard = ({restaurant, userProfile, handleAddRestaurant, handleRem
           <p className={styles.card_text}>{restaurant.categories?.map(category => category.title).join(', ')}</p>
           <p className={styles.card_text}>Rating: {restaurant.rating}</p>
           <p className={styles.card_text}>Price: {restaurant.price}</p>
+          
+          <div className={styles.restaurantForm}>
           <RestaurantForm
             restaurant={restaurant}
             userProfile={userProfile}
             handleAddRestaurant={handleAddRestaurant}
             handleRemoveRestaurant={handleRemoveRestaurant}
           />
+          </div>
+
         </div>
       </div>
     </li>
