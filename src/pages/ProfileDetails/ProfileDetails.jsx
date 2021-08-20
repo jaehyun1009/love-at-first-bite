@@ -3,11 +3,14 @@ import FavoriteRestaurants from '../../components/FavoriteRestaurants/FavoriteRe
 import { Link } from 'react-router-dom'
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 import OtherUserInfo from '../../components/OtherUserInfo/OtherUserInfo';
+import styles from './ProfileDetails.module.css'
+
 
 const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, handleRemoveRestaurant, handleUpdateProfile}) => {
   const {profile} = location.state
   return (
     <>
+      <main className={styles.mainPage}>
       <FavoriteRestaurants 
         profile= {profile}
         userProfile= {userProfile}
@@ -34,7 +37,7 @@ const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, ha
         history= {history}
         userProfile={userProfile}
       />
-
+    </main>
     </>
   )
 }
