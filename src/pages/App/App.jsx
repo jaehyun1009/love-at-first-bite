@@ -140,8 +140,6 @@ class App extends Component {
 					<Messages location={location} userProfile={userProfile}/> : <Redirect to='/login'/>
 				}/>
 				</main>
-		    {/* forces Footer to the bottom */}
-
 			</>
 		)
 	}

@@ -35,7 +35,7 @@ class OtherUserInfo extends Component {
           <p className={styles.paragraph} >LOCATION: <br /> {this.state.location} </p>
           <p className={styles.paragraph} >ABOUT THEM: <br /> {this.state.aboutMe}</p>
           <br />
-          {this.props.profile._id !== this.props.userProfile._id &&
+          {this.props.profile?._id !== this.props.userProfile?._id &&
             <p className={styles.messageLink}> <MessageLink profile={this.props.profile} /></p>
           }
           <br />
