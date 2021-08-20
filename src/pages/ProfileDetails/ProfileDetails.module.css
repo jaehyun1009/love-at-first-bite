@@ -7,7 +7,7 @@
 .mainPage {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 @media (max-width: 45rem) {
