@@ -3,6 +3,8 @@ import * as restaurantAPI from '../../services/restaurantService'
 import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import styles from './RestaurantDetails.module.css'
+import Header from '../../components/Header/Header'
+
 
 class RestaurantDetails extends Component{
   state = {
@@ -17,10 +19,13 @@ class RestaurantDetails extends Component{
   render(){
     const {searchResult} = this.state
     return (
+      <>
+      <Header />
       <div className={styles.box} >
         {
           (searchResult._id) ? 
           <>
+          
             <h1 className={styles.header}><a href={searchResult?.url} target="blank"> {searchResult?.name}</a> </h1>
             <img className={styles.picture} src={searchResult?.img_url} width='300px' alt='business' />
             <br />
@@ -69,6 +74,7 @@ class RestaurantDetails extends Component{
           </>
         }
       </div>
+      </>
     )
   }
 }
