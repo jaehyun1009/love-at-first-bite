@@ -21,15 +21,16 @@ class RestaurantDetails extends Component{
         {
           (searchResult._id) ? 
           <>
-            <h1>{searchResult?.name}</h1>
-            <img src={searchResult?.img_url} width='300px' alt='business'/>
+            <h1 className={styles.header}>{searchResult?.name}</h1>
+            
+            
+            <img className={styles.picture} src={searchResult?.img_url} width='300px' alt='business' />
             <br />
-            <h3><a href={searchResult?.url}>Yelp link to business</a></h3>
-            <h3>Phone Number: {searchResult?.phone}</h3>
-            <h3>Rating: {searchResult?.rating} ({searchResult?.review_count} Reviews)</h3>
-            <h3>Price Rating: {searchResult?.price}</h3>
-            <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
-            <h3>Address: {searchResult?.address}</h3>
+            <h3 className={styles.info}>Address: {searchResult?.address}</h3>
+            <h3 className={styles.info}>Phone Number: {searchResult?.phone}</h3>
+            <h3 className={styles.info}>Rating: {searchResult?.rating} ({searchResult?.review_count} Reviews) &emsp;&emsp; Price Rating: {searchResult?.price}</h3>
+            <h3 className={styles.info}>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
+            <h3 className={styles.info}><a href={searchResult?.url}>Yelp link to business</a></h3>
             { !!searchResult?.likedBy?.find(profile => profile._id === this.props.userProfile?._id) && 
               <>
                 <h2>Others who liked this restaurant</h2>
@@ -46,23 +47,24 @@ class RestaurantDetails extends Component{
               userProfile={this.props.userProfile}
               handleAddRestaurant={this.props.handleAddRestaurant}
               handleRemoveRestaurant={this.props.handleRemoveRestaurant}
+              className={styles.restaurantButton}
             />
           </> : <>
-            <h1>{searchResult?.name}</h1>
-            <img src={searchResult?.image_url} width='500px' alt='business'/>
+            <h1 className={styles.header}>{searchResult?.name}</h1>
+            <img className={styles.picture}  src={searchResult?.image_url} width='500px' alt='business'/>
             <br />
-            <h3><a href={searchResult?.url}>Yelp link to business</a></h3>
-            <h3>Phone Number: {searchResult?.display_phone}</h3>
-            <h3>Rating: {searchResult?.rating} ({searchResult?.review_count} Reviews)</h3>
-            <h3>Price Rating: {searchResult?.price}</h3>
-            <h3>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
-            <h3>Address: {searchResult?.location?.display_address?.join(', ')}</h3>
+            <h3 className={styles.info}>Address: {searchResult?.location?.display_address?.join(', ')}</h3>
+            <h3 className={styles.info}>Phone Number: {searchResult?.display_phone}</h3>
+            <h3 className={styles.info}>Rating: {searchResult?.rating} ({searchResult?.review_count} Reviews)  &emsp;&emsp; Price Rating: {searchResult?.price} </h3>
+            <h3 className={styles.info}>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
+            <h3 className={styles.info}><a href={searchResult?.url}>Yelp link to business</a></h3>
             <RestaurantForm
               key={searchResult?.id}
               restaurant={searchResult}
               userProfile={this.props.userProfile}
               handleAddRestaurant={this.props.handleAddRestaurant}
               handleRemoveRestaurant={this.props.handleRemoveRestaurant}
+              className={styles.restaurantButton}
             />
           </>
         }
