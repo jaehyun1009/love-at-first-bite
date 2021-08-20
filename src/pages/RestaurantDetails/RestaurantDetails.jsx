@@ -3,6 +3,8 @@ import * as restaurantAPI from '../../services/restaurantService'
 import RestaurantForm from '../../components/RestaurantForm/RestaurantForm'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
 import styles from './RestaurantDetails.module.css'
+import Header from '../../components/Header/Header'
+
 
 class RestaurantDetails extends Component{
   state = {
@@ -17,38 +19,41 @@ class RestaurantDetails extends Component{
   render(){
     const {searchResult} = this.state
     return (
+      <>
+      <Header />
       <div className={styles.box} >
         {
           (searchResult._id) ? 
           <>
-            <h1 className={styles.header}>{searchResult?.name}</h1>
-            
-            
+          
+            <h1 className={styles.header}><a href={searchResult?.url} target="blank"> {searchResult?.name}</a> </h1>
             <img className={styles.picture} src={searchResult?.img_url} width='300px' alt='business' />
             <br />
             <h3 className={styles.info}>Address: {searchResult?.address}</h3>
             <h3 className={styles.info}>Phone Number: {searchResult?.phone}</h3>
             <h3 className={styles.info}>Rating: {searchResult?.rating} ({searchResult?.review_count} Reviews) &emsp;&emsp; Price Rating: {searchResult?.price}</h3>
             <h3 className={styles.info}>Categories: {searchResult?.categories?.map(category => category.title).join(', ')}</h3>
-            <h3 className={styles.info}><a href={searchResult?.url}>Yelp link to business</a></h3>
+            {/* <h3 className={styles.info}><a href={searchResult?.url}>Yelp link to business</a></h3> */}
             { !!searchResult?.likedBy?.find(profile => profile._id === this.props.userProfile?._id) && 
               <>
-                <h2>Others who liked this restaurant</h2>
+                <h2 className={styles.otherPeople}>OTHERS WHO LIKE THIS RESTAURANT</h2>
+                <div className={styles.peopleList}>
                 { searchResult?.likedBy?.map(profile => {
                     if (profile._id !== this.props.userProfile?._id)
                       return <ProfileCard key={profile._id} profile={profile} />
                   })
                 }
+                </div>
               </>
             }
-            <RestaurantForm
+           <RestaurantForm
               key={searchResult?.id}
               restaurant={searchResult}
               userProfile={this.props.userProfile}
               handleAddRestaurant={this.props.handleAddRestaurant}
               handleRemoveRestaurant={this.props.handleRemoveRestaurant}
               className={styles.restaurantButton}
-            />
+            /> 
           </> : <>
             <h1 className={styles.header}>{searchResult?.name}</h1>
             <img className={styles.picture}  src={searchResult?.image_url} width='500px' alt='business'/>
@@ -69,6 +74,7 @@ class RestaurantDetails extends Component{
           </>
         }
       </div>
+      </>
     )
   }
 }
