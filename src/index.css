@@ -10,9 +10,9 @@ html, body {
 }
 
 .page-footerfont-smallblue{
-  padding-top: 25%;
+  padding-top: 7.5%;
   text-align: center;
-  position: static;
+  position: relative;
 }
 
 * {
