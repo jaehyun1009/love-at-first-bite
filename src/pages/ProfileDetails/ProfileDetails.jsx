@@ -10,7 +10,13 @@ const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, ha
   const {profile} = location.state
   return (
     <>
-      <main className={styles.mainPage}>
+      <main className={styles.mainPage}>  
+      <OtherUserInfo 
+        profile= {profile}
+        history= {history}
+        userProfile={userProfile}
+      />
+
       <FavoriteRestaurants 
         profile= {profile}
         userProfile= {userProfile}
@@ -18,20 +24,15 @@ const ProfileDetails = ({location, history, userProfile, handleAddRestaurant, ha
         handleRemoveRestaurant= {handleRemoveRestaurant}
       />
       {
-        profile?._id === userProfile?._id ?
+        profile?._id === userProfile?._id &&
         <ProfileInfo 
           profile= {profile}
           history= {history}
           userProfile={userProfile}
           handleUpdateProfile={handleUpdateProfile}
-        /> : 
-        <MessageLink profile={profile}/>
+        /> 
       }
-      <OtherUserInfo 
-        profile= {profile}
-        history= {history}
-        userProfile={userProfile}
-      />
+      
     </main>
     </>
   )

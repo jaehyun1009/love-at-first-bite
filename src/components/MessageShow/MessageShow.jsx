@@ -28,7 +28,7 @@ class MessageShow extends Component {
       <div className={styles.box}>
       <div hidden={!this.props.messageShow}>
 
-      <h1 className={styles.header}>  <ProfileCard profile={this.props.profile}/>   </h1>=
+      <h1 className={styles.header}>  <ProfileCard profile={this.props.profile}/>   </h1>
 
       <form onSubmit={this.handleSubmit}>
         <textarea className={styles.nextMessage} name="content" id="content" cols="30" rows="10" onChange={this.handleChange} value={this.state.formData.content}></textarea>
