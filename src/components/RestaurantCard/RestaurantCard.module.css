@@ -58,8 +58,8 @@ img {
 }
 
 .card {
-  background-color: white;
-  border-radius: 0.25rem;
+  border-radius:10px;
+  background-color:transparent;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   flex-direction: column;
   overflow: hidden;
@@ -68,7 +68,7 @@ img {
 }
 
 .card_content {
-
+  background-color: transparent;
   padding: 1rem;
   background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
 }
