@@ -8,7 +8,7 @@ const MessageLink = ({profile}) => {
         to={{
           pathname: "/messages",
           state: profile 
-        }}> Messages
+        }}> Start A Conversation
       </Link>
     </>
   )

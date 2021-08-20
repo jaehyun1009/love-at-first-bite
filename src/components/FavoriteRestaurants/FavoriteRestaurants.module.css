@@ -28,8 +28,11 @@ textarea {
 	box-sizing: border-box;
 	box-shadow: 0 15px 25px rgba(0,0,0,.5);
 	border-radius: 10px;
-	margin-top: 20px;
 	margin-bottom: 20px;
+	margin-top: 20px;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+	height: 0%;
 }
 
 .box h2 {
@@ -116,7 +119,7 @@ textarea {
 
 }
 
-@media (max-width: 40em) {
+@media (max-width: 45em) {
   .box {
     float: none;
     width: auto;

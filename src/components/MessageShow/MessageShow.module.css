@@ -28,6 +28,8 @@
 
 .eachMessage {
   line-height: 1em;
+  margin-right: 1em;
+  /* margin-left: 1em; */
 }
 
 .textMessage {
@@ -45,7 +47,11 @@
 	border-radius: 10px;
   font-size: 10px;
   margin-top: 25px;
+  margin-left: 2em;
+  margin-right: 2em;
 }
+
+
 
 .box h2 {
 	margin: 0 0 30px;
@@ -113,17 +119,17 @@
     font-size: 15px;
     height: 28px;
     margin-top: 10px;
-    margin-right: 0%;
+    margin-right: 3em;
     /* text-align: center; */
     width: 4em;
     margin-left: 85%;
 }
 
 .nextMessage {
-  width: 80%;
+  width: 90%;
   height: 30px;
   margin-right: 0%;
-  margin-left: 18%;
+  margin-left: 8%;
   font-size: 15px;
   font-family: 'Oxygen', sans-serif;
 
