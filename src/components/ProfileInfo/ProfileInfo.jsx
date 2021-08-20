@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styles from './ProfileInfo.module.css'
 
-
 class ProfileInfo extends Component {
   state = {
     firstName: this.props?.profile?.firstName,

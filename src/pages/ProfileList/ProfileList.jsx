@@ -5,7 +5,7 @@ import ProfileCard from '../../components/ProfileCard/ProfileCard'
 class ProfileList extends Component {
   state = {
     profiles: [],
-    adminIds: ['611d9ffed59c2faf1f34bfb2', '611db54d353c591a1c0b139e', '611dc316037e453b9015947c']
+    adminIds: ['611ef1eab3dab756f1debf85']
   }
   async componentDidMount(){
     const profiles = await getAllProfiles()

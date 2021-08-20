@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './RestaurantForm.module.css'
 
-
 class RestaurantForm extends Component{
   state = {
     formData: {}

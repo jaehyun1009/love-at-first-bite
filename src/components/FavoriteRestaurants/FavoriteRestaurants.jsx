@@ -2,7 +2,6 @@ import React from 'react';
 import RestaurantForm from '../RestaurantForm/RestaurantForm'
 import styles from './FavoriteRestaurants.module.css'
 
-
 const FavoriteRestaurants = ({profile, userProfile, handleAddRestaurant, handleRemoveRestaurant}) => {
   return (
     <>

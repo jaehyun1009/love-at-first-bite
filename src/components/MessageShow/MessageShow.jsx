@@ -3,7 +3,6 @@ import { DateTime } from 'luxon'
 import styles from './MessageShow.module.css'
 import ProfileCard from '../ProfileCard/ProfileCard'
 
-
 class MessageShow extends Component {
   state = {
     formData:{
