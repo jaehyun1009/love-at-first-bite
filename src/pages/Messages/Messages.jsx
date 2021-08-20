@@ -67,7 +67,7 @@ class Messages extends Component {
           </main>
         </> : <>
           <main className={styles.mainPage}>
-          <Messaged handleMessageShow={this.handleMessageShow} messaged={this.state.messaged} /> 
+          <Messaged messaged={this.state.messaged} handleMessageShow={this.handleMessageShow} /> 
           <MessageShow newMessage={this.newMessage} messages={this.state.messages} wasThereLocation={this.state.wasThereLocation} messageShow={this.state.messageShow} profile={this.state.profile} userProfile={this.props?.userProfile}/>
           </main>
         </>

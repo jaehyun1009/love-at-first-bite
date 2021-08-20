@@ -7,8 +7,7 @@ class Messaged extends Component {
     return (
       <>
       <div className={styles.box}>
-        <h1 className={styles.header}> CONVERSATIONS</h1>
-
+      <h1 className={styles.header}>Messages</h1>
       {this.props.messaged?.map((messaged, idx) =>
         <>
         <button className={styles.messageBox} onClick={() => this.props.handleMessageShow(messaged.otherPerson)}>

@@ -15,7 +15,6 @@ import Messages from '../Messages/Messages'
 import styles from './App.module.css'
 // import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 
-
 class App extends Component {
 	state = {
 		userProfile: null,
